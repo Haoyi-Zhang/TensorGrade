@@ -1,0 +1,14 @@
+{
+  "bibliography_entries": 83,
+  "cited_keys": 83,
+  "doi_records": 77,
+  "errors": [],
+  "interpretation": "Offline consistency and completeness check against the delivered frozen metadata inventory plus a dated primary-record spot-check inventory. Reproduction does not resolve the network and this is not an independent literature review.",
+  "inventory_rows": 83,
+  "latest_inventory_check": "2026-09-19",
+  "latest_primary_record_spotcheck": "2026-09-19",
+  "passed": true,
+  "primary_record_spotchecks": 16,
+  "stable_url_only_records": 6,
+  "verified_inventory_records": 83
+}

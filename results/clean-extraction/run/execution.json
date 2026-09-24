@@ -1,0 +1,88 @@
+{
+  "all_commands_succeeded": true,
+  "interpretation": "Command success and finite checks are not machine-checked general proofs, upstream execution, or independent review of the public adapters.",
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "cpu_hard_seconds": 110,
+    "cpu_soft_seconds": 105,
+    "sequential_workers": 1,
+    "wall_seconds_per_child": 115
+  },
+  "runs": [
+    {
+      "child_peak_rss_kib_upper_bound": 130460,
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "name": "unit-tests",
+      "process_cpu_seconds": 3.466256,
+      "wall_seconds": 3.471109845000001,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 130460,
+      "command": [
+        "audit_references.py",
+        "--output",
+        "reference-audit.json"
+      ],
+      "exit_code": 0,
+      "name": "reference-audit",
+      "process_cpu_seconds": 0.5619919999999997,
+      "wall_seconds": 0.5638868080000066,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 130460,
+      "command": [
+        "run_pilot.py",
+        "--output",
+        "pilot.json"
+      ],
+      "exit_code": 0,
+      "name": "pilot",
+      "process_cpu_seconds": 1.16907,
+      "wall_seconds": 1.1746436890000496,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 130460,
+      "command": [
+        "run_diagnostics.py",
+        "--output",
+        "diagnostics.json"
+      ],
+      "exit_code": 0,
+      "name": "diagnostics",
+      "process_cpu_seconds": 1.4023900000000005,
+      "wall_seconds": 1.4075005950001014,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 130460,
+      "command": [
+        "run_public_study.py",
+        "--corpus",
+        "data/public-corpus.csv",
+        "--output",
+        "public-study.json",
+        "--seed",
+        "20260915",
+        "--budget",
+        "64"
+      ],
+      "exit_code": 0,
+      "name": "public-study",
+      "process_cpu_seconds": 2.6585239999999994,
+      "wall_seconds": 2.660521744000107,
+      "wall_timeout": false
+    }
+  ],
+  "total_process_cpu_seconds": 9.258232
+}

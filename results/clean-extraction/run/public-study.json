@@ -1,0 +1,581 @@
+{
+  "abstained_count": 8,
+  "adapter_results": [
+    {
+      "adapter": "P01",
+      "bounded_case_count": 29222,
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    {
+      "adapter": "P04",
+      "bounded_case_count": 22,
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    {
+      "adapter": "P06",
+      "bounded_case_count": 400,
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    {
+      "adapter": "P08",
+      "bounded_case_count": 96,
+      "mismatch_count": 0,
+      "mismatches": []
+    }
+  ],
+  "admitted_count": 4,
+  "corpus": [
+    {
+      "adapter_id": "P01",
+      "commit_sha": "72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
+      "commit_title": "Replace exec/eval with direct Python calls for CIN construction in einsum",
+      "decision": "admitted",
+      "id": "P01",
+      "production_files": "src/scorch/ops.py",
+      "reason": "Complete one-file construction refactor; exact CIN AST equality under the source region's nonempty-access invariant.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
+      "split": "development"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "f20d4ac5a17328b24045d1f43c7c8b76106e615f",
+      "commit_title": "Refactor ModeIterator into IteratorBase class hierarchy with subclasses per level type",
+      "decision": "abstained",
+      "id": "P02",
+      "production_files": "src/scorch/compiler/iter_lattice.py;src/scorch/compiler/iterator.py",
+      "reason": "Factory dispatch class identity constructor exception behavior and mutable iterator state are outside the declared source adapters.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/f20d4ac5a17328b24045d1f43c7c8b76106e615f",
+      "split": "development"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "08a92fe381cbddcbcfa2a616644f65b149d50287",
+      "commit_title": "Refactor CIN lowerer: extract ResultTensorAssembler and helper classes",
+      "decision": "abstained",
+      "id": "P03",
+      "production_files": "src/scorch/compiler/cin_lowerer.py",
+      "reason": "Large extraction crosses allocation ownership physical sparse assembly and foreign-memory lifetime; no complete adapter was established.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/08a92fe381cbddcbcfa2a616644f65b149d50287",
+      "split": "development"
+    },
+    {
+      "adapter_id": "P04",
+      "commit_sha": "d7a9cdc82819750c1a1285cded8385165ea51371",
+      "commit_title": "Refactor LLIRLowerer into dedicated helper methods",
+      "decision": "admitted",
+      "id": "P04",
+      "production_files": "src/scorch/compiler/codegen.py",
+      "reason": "Complete one-file dispatch extraction; structural induction gives identical generated C++ text for the changed LLIR algebra.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/d7a9cdc82819750c1a1285cded8385165ea51371",
+      "split": "development"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "404e10762f866303758ec60ac6a9cf996be7da0c",
+      "commit_title": "Consolidate format string parsing into a single helper",
+      "decision": "abstained",
+      "id": "P05",
+      "production_files": "src/scorch/format.py;src/scorch/utils.py",
+      "reason": "Accepted input language changes and previously rejected aliases become valid; no invariant made the whole public API behavior preserving.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/404e10762f866303758ec60ac6a9cf996be7da0c",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "P06",
+      "commit_sha": "2105686711292cd1d1eb2438035b555fa644bf2a",
+      "commit_title": "Extract CoordinateResolver class from lattice-point lowering",
+      "decision": "admitted",
+      "id": "P06",
+      "production_files": "src/scorch/compiler/iter_lattice.py",
+      "reason": "Sequential extraction partitions the original statement sequence into five helpers called in the original order; branch predicates and emitted nodes are unchanged.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/2105686711292cd1d1eb2438035b555fa644bf2a",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "b606b3078082ba78a57ed818b848db7214026788",
+      "commit_title": "Add logical mode-order reordering for sparse tensors",
+      "decision": "abstained",
+      "id": "P07",
+      "production_files": "csrc/header.cpp;src/scorch/compiler/cin.py;src/scorch/compiler/cin_lowerer.py;src/scorch/compiler/iter_lattice.py;src/scorch/ops.py;src/scorch/stensor.py",
+      "reason": "Feature patch changes physical mode order mutable parent links workspace assembly and C++ coordinate hashing outside the affine rational model.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/b606b3078082ba78a57ed818b848db7214026788",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "P08",
+      "commit_sha": "33532a3092035a93d4e78936e089c69fa6f3d3e9",
+      "commit_title": "Clean up stale TODOs and enable kij outer-product SpMM test",
+      "decision": "admitted",
+      "id": "P08",
+      "production_files": "src/scorch/compiler/cin.py;comments/tests",
+      "reason": "Only production expression is an equivalent mode-order initialization under the existing TensorVar invariant; remaining production edits are comments and the test edit is non-runtime.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/33532a3092035a93d4e78936e089c69fa6f3d3e9",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "0285d7be640354dd3e23d4f6bb120dce7145407f",
+      "commit_title": "Fix scheduler cost model bugs and add tuner",
+      "decision": "abstained",
+      "id": "P09",
+      "production_files": "src/scorch/compiler/scheduler.py;tools/tests",
+      "reason": "Scheduler output intentionally changes and uses heuristic floating costs; translating every resulting program is outside the frozen adapter set.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/0285d7be640354dd3e23d4f6bb120dce7145407f",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "642157c30d031a326459ae2194545efe39d66c88",
+      "commit_title": "Fix mode-order alignment and broadcast dimensions",
+      "decision": "abstained",
+      "id": "P10",
+      "production_files": "src/scorch/compiler/iter_lattice.py;src/scorch/ops.py",
+      "reason": "Correctness feature mutates physical mode orders and adds previously missing loops; before and after are not intended to be equivalent on the repaired domain.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/642157c30d031a326459ae2194545efe39d66c88",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "b8932232cad36e521723e87cf70cdea7025d212f",
+      "commit_title": "Optimize SpMM cache path and compiler performance codegen",
+      "decision": "abstained",
+      "id": "P11",
+      "production_files": "csrc;src/scorch/compiler;src/scorch/ops.py",
+      "reason": "Multi-file OpenMP floating-point raw-memory and scheduling change exceeds the exact-rational side-effect-free fragment.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/b8932232cad36e521723e87cf70cdea7025d212f",
+      "split": "held-out"
+    },
+    {
+      "adapter_id": "",
+      "commit_sha": "5b79b905eb3ebaa31dae1164cfbcaa13a2ad321d",
+      "commit_title": "Refactor prebuilt kernel dispatch into typed modular registry",
+      "decision": "abstained",
+      "id": "P12",
+      "production_files": "csrc;src/scorch/ops.py;src/scorch/prebuilt_kernels.py",
+      "reason": "Typed C++ kernels integer and floating semantics dispatch fallback and mode normalization require a whole-runtime model not present here.",
+      "source_url": "https://github.com/bobbyyyan/scorch/commit/5b79b905eb3ebaa31dae1164cfbcaa13a2ad321d",
+      "split": "held-out"
+    }
+  ],
+  "corpus_count": 12,
+  "coverage": 0.3333333333333333,
+  "cpu_seconds": 2.0759065740000002,
+  "development_admitted": 2,
+  "development_count": 4,
+  "errors": [],
+  "held_out_admitted": 2,
+  "held_out_count": 8,
+  "interpretation": "Admitted means the entire production diff was mapped to a declared source adapter and its adapter equivalence was checked on the retained bounded domain, backed by a separate prose universal proof. It is not an execution of upstream Scorch or an independent proof review. Abstentions remain in the denominator. Mutants are synthetic negative controls, not historical Scorch defects.",
+  "mutation_study": {
+    "budget_per_adapter": 64,
+    "mutant_count": 20,
+    "rows": [
+      {
+        "adapter": "P01",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "drop-last-operand",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 1
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        }
+      },
+      {
+        "adapter": "P01",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "duplicate-first-operand",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 1
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        }
+      },
+      {
+        "adapter": "P01",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "reverse-product",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 1
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        }
+      },
+      {
+        "adapter": "P01",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "wrong-lhs",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 1
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        }
+      },
+      {
+        "adapter": "P01",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "reverse-loop-nesting",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 1
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        }
+      },
+      {
+        "adapter": "P04",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "omit-call-semicolon",
+        "random": {
+          "budget": 64,
+          "detected": false,
+          "first_detection_execution": null
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 11
+        }
+      },
+      {
+        "adapter": "P04",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 13
+        },
+        "mutant": "reverse-function-args",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 21
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 22
+        }
+      },
+      {
+        "adapter": "P04",
+        "developer-examples": {
+          "budget": 64,
+          "detected": false,
+          "first_detection_execution": null
+        },
+        "mutant": "drop-array-braces",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 17
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 9
+        }
+      },
+      {
+        "adapter": "P04",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 6
+        },
+        "mutant": "increment-always-semicolon",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 33
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 15
+        }
+      },
+      {
+        "adapter": "P04",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 13
+        },
+        "mutant": "drop-final-brace",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 21
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 22
+        }
+      },
+      {
+        "adapter": "P06",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 3
+        },
+        "mutant": "drop-load",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 1
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 20
+        }
+      },
+      {
+        "adapter": "P06",
+        "developer-examples": {
+          "budget": 64,
+          "detected": false,
+          "first_detection_execution": null
+        },
+        "mutant": "max-not-min",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 4
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 39
+        }
+      },
+      {
+        "adapter": "P06",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 5
+        },
+        "mutant": "assemble-last",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 13
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 7
+        }
+      },
+      {
+        "adapter": "P06",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 3
+        },
+        "mutant": "coord-end-off-by-one",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 27
+        }
+      },
+      {
+        "adapter": "P06",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 5
+        },
+        "mutant": "drop-dense",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 5
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 3
+        }
+      },
+      {
+        "adapter": "P08",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 3
+        },
+        "mutant": "ignore-explicit",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 32
+        }
+      },
+      {
+        "adapter": "P08",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "shape-off-by-one",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 4
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 6
+        }
+      },
+      {
+        "adapter": "P08",
+        "developer-examples": {
+          "budget": 64,
+          "detected": false,
+          "first_detection_execution": null
+        },
+        "mutant": "format-off-by-one",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 3
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        }
+      },
+      {
+        "adapter": "P08",
+        "developer-examples": {
+          "budget": 64,
+          "detected": false,
+          "first_detection_execution": null
+        },
+        "mutant": "reverse-default",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 3
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        }
+      },
+      {
+        "adapter": "P08",
+        "developer-examples": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 2
+        },
+        "mutant": "empty-is-explicit",
+        "random": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 3
+        },
+        "stratified-boundary": {
+          "budget": 64,
+          "detected": true,
+          "first_detection_execution": 17
+        }
+      }
+    ],
+    "seed": 20260915,
+    "summary": {
+      "developer-examples": {
+        "detected": 16,
+        "rate": 0.8,
+        "total": 20
+      },
+      "random": {
+        "detected": 19,
+        "rate": 0.95,
+        "total": 20
+      },
+      "stratified-boundary": {
+        "detected": 20,
+        "rate": 1.0,
+        "total": 20
+      }
+    }
+  },
+  "peak_rss_kib": 105520,
+  "repository": "bobbyyyan/scorch",
+  "study": "frozen public-source adapter coverage and synthetic negative controls",
+  "wall_seconds": 2.0777864060000866
+}

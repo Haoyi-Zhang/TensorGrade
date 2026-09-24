@@ -1,0 +1,143 @@
+{
+  "status": "pass-with-declared-external-readiness-holds",
+  "checked_on": "2026-09-19",
+  "scope": "same-environment clean packaging and reproducibility audit for the declared internal research scope",
+  "project_tree": {
+    "single_root": "semantic-contract-grading-for-tensor-compiler-patches/",
+    "root_entries": [
+      "CURRENT-STATE.md",
+      "artifact/",
+      "paper/",
+      "research-plan.md"
+    ],
+    "exact_four_entry_contract": true,
+    "nested_archives_present": false,
+    "archive_under_128_mib": true,
+    "zip_integrity_test_passed": true,
+    "single_archive_root_verified": true
+  },
+  "standalone_repository": {
+    "single_root": "semantic-contract-grading-tensor/",
+    "requires_paper_directory": false,
+    "nested_archives_present": false,
+    "archive_under_128_mib": true,
+    "zip_integrity_test_passed": true,
+    "single_archive_root_verified": true
+  },
+  "clean_reproduction": {
+    "five_phases_exit_zero": true,
+    "unit_tests_passed": 33,
+    "reference_audit_records": 83,
+    "reference_audit_errors": 0,
+    "reference_primary_record_spotchecks": 16,
+    "semantic_summary_matches_retained_excluding_environmental_fields": true,
+    "excluded_environmental_fields": [
+      "current_whole_process_cpu_seconds",
+      "current_peak_rss_kib"
+    ],
+    "generated_tables_compared": 9,
+    "generated_tables_byte_identical": true,
+    "documented_cli_examples_passed": 3,
+    "clean_process_cpu_seconds": 9.258232,
+    "clean_child_peak_rss_kib_upper_bound": 130460
+  },
+  "replay_trust_boundary": {
+    "independent_exact_rational_interpreter": true,
+    "imports_symbolic_encoder_or_solver": false,
+    "independent_case_grammar_validation": true,
+    "independent_sort_validation": true,
+    "independent_rank_term_node_and_coefficient_bounds": true,
+    "independent_storage_mode_validation": true,
+    "independent_witness_schema_validation": true,
+    "rejects_non_affine_multiplication": true,
+    "rejects_binary_float_witness_values": true,
+    "adversarial_and_differential_tests_passed": 7,
+    "boundary": "separate implementation and tests are not independent human review or a mechanized equivalence proof"
+  },
+  "retained_scientific_counts": {
+    "closed_grades_realized": 9,
+    "pilot_program_pairs": 28,
+    "consumer_descriptions": 16,
+    "frozen_generated_program_pairs": 64,
+    "main_run_smt_queries": 801,
+    "finite_shape_oracle_checks": 252,
+    "fine_oracle_obligations": 3259,
+    "coefficient_row_pairs": 729,
+    "exact_vector_evaluations": 19683,
+    "direct_refutation_replays": 167,
+    "compact_certificates": 162,
+    "compact_certificates_zero_cell": 72,
+    "compact_certificates_one_cell": 83,
+    "compact_certificates_two_cell": 7,
+    "public_commits": 12,
+    "admitted_source_adapters": 4,
+    "abstentions": 8,
+    "bounded_adapter_states": 29740,
+    "bounded_adapter_mismatches": 0,
+    "synthetic_mutants": 20,
+    "mutants_detected_developer": 16,
+    "mutants_detected_seeded_random": 19,
+    "mutants_detected_stratified_boundary": 20,
+    "mutation_budget_per_adapter": 64
+  },
+  "bibliography": {
+    "entries": 83,
+    "entries_cited_in_main_article": 83,
+    "doi_records": 77,
+    "stable_official_or_dblp_records": 6,
+    "dated_primary_record_spotchecks": 16,
+    "latest_inventory_check": "2026-09-19",
+    "latest_primary_record_spotcheck": "2026-09-19",
+    "newest_close_work_included": [
+      "Mirage: A Multi-Level Superoptimizer for Tensor Programs (OSDI 2025)",
+      "EqiForge: Scaling Equivalence-Guided Superoptimization for Tensor Programs (arXiv, 2026-09-11)"
+    ],
+    "frozen_inventory_fields_checked": [
+      "entry_type",
+      "complete_author_string_and_order",
+      "title",
+      "year",
+      "container_title",
+      "volume",
+      "number",
+      "pages",
+      "article_number",
+      "publisher",
+      "identifier_kind_and_value",
+      "record_url",
+      "verification_status",
+      "verification_date"
+    ],
+    "bibtex_warnings": 0,
+    "unknown_citations": 0,
+    "uncited_bibliography_entries": 0,
+    "audit_boundary": "offline consistency and completeness against delivered frozen inventories plus dated primary-record spotchecks; reproduction does not resolve the network and this is not an independent literature review"
+  },
+  "pdfs": {
+    "main_pages": 36,
+    "supplement_pages": 10,
+    "main_sections": 9,
+    "main_inline_appendix": false,
+    "overfull_boxes": 0,
+    "undefined_citations_or_references": 0,
+    "all_fonts_embedded": true,
+    "ghostscript_preflight_passed": true,
+    "source_vs_clean_main_changed_render_pages_at_96_dpi": 0,
+    "source_vs_clean_supplement_changed_render_pages_at_96_dpi": 0,
+    "main_pages_rendered_and_visually_reviewed": 36,
+    "supplement_pages_rendered_and_visually_reviewed": 10,
+    "repaired_visual_defect": "orthogonalized the native TikZ evidence-pipeline failure routes and separated all labels from nodes and arrows"
+  },
+  "interpretation": {
+    "what_this_check_establishes": "the delivered source, retained evidence, bibliography inventory, generated tables, and rendered PDFs are mutually consistent in this environment",
+    "what_this_check_does_not_establish": [
+      "independent review or replication",
+      "proof-assistant verification",
+      "upstream Scorch checkout, native build, runtime, or repository-test execution",
+      "cross-platform reproducibility",
+      "permission or readiness to submit under unverified live venue rules",
+      "population-level compiler-patch coverage",
+      "completeness of the literature beyond the dated search and spotcheck scope"
+    ]
+  }
+}

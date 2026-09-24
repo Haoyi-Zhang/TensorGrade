@@ -1,0 +1,17 @@
+{
+  "study": "frozen public-source adapter coverage and synthetic negative controls",
+  "repository": "bobbyyyan/scorch",
+  "corpus_count": 12,
+  "development_count": 4,
+  "held_out_count": 8,
+  "admitted_count": 4,
+  "abstained_count": 8,
+  "coverage": 0.3333333333333333,
+  "development_admitted": 2,
+  "held_out_admitted": 2,
+  "cpu_seconds": 2.0759065740000002,
+  "wall_seconds": 2.0777864060000866,
+  "peak_rss_kib": 105520,
+  "errors": [],
+  "interpretation": "Admitted means the entire production diff was mapped to a declared source adapter and its adapter equivalence was checked on the retained bounded domain, backed by a separate prose universal proof. It is not an execution of upstream Scorch or an independent proof review. Abstentions remain in the denominator. Mutants are synthetic negative controls, not historical Scorch defects."
+}
