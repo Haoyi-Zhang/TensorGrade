@@ -1,58 +1,35 @@
 # Frozen public-commit selection and split
 
-Recorded final protocol: 2026-09-15.
+## Denominator
 
-## Repository and denominator
+The fixed denominator is the twelve-row chronological sequence in
+`data/public-corpus.csv`. Each row is a non-merge commit changing production
+compiler, format, dispatch, or kernel source. Intervening documentation-only,
+benchmark-only, or tests-only commits are excluded by file-scope rule rather
+than adapter outcome. Every unsupported selected commit remains as an
+abstention.
 
-The public study uses `bobbyyyan/scorch`, the compiler-based sparse tensor
-framework connected to the motivating TensorBench line of work. The fixed
-denominator is the twelve-row chronological sequence in
-`data/public-corpus.csv`, beginning with commit `72c55d36...`. Each selected
-record is a non-merge commit that changes production compiler, format, dispatch,
-or kernel source.
-
-Intervening commits are excluded only when their changes are documentation-only,
-benchmark-only, or test-only. Inclusion is decided from changed production-file
-scope, not from whether an adapter succeeds. Every selected unsupported commit
-remains in the denominator as an abstention.
-
-The first four rows are the development segment used to establish the adapter
-templates. The following eight rows are the later retrospective segment. The CSV
-field remains `held-out` for stable result compatibility, but repository scouting
-preceded the split; it is not preregistered, blind, or a statistical test sample.
-No later record was moved into development after its decision, and no adapter
-category was added solely to rescue one later record.
+Rows P01--P04 are the development segment. P05--P12 are the later retrospective
+segment; the CSV retains `held-out` for continuity, but the segment was not
+preregistered, blinded, or statistically sampled.
 
 ## Admission gates
 
-A record is admitted only when all of the following are documented:
+The seven gates are frozen in `data/public-adapter-evidence.json`: fixed source
+pins, complete hunk disposition, source-derived invariant, complete observable,
+universal argument, independent bounded paths with discriminating controls, and
+unchanged-downstream congruence. A self-authored predicate cannot establish that
+an upstream state is unreachable. Failure produces abstention, not a claim that
+the upstream patch is wrong.
 
-1. immutable commit identifier and complete changed production-file list;
-2. runtime/non-runtime disposition of every changed production statement;
-3. explicit source-state invariant;
-4. before/after denotations and an observable that captures all changed behavior
-   reaching the claimed execution;
-5. a universal equality proof over the invariant;
-6. independently coded bounded before/after models and discriminating mutants;
-7. an unchanged-downstream congruence argument to the paper's five tensor
-   observations.
+## Repaired outcome
 
-A failed gate produces an abstention, not a claim that the upstream commit is
-incorrect. Intentional feature fixes are generally not regression-equivalence
-questions. Physical sparse storage, object identity/exception timing, allocation
-and ownership, heuristic scheduling, floating point, raw memory, threading, and
-whole-runtime dispatch are outside the frozen adapter templates.
+P01 fails the source-invariant and complete-observable gates because scalar
+operands/results are source-reachable and can change behavior. P04, P06, and P08
+pass under their documented conditional scopes. The final descriptive result is
+three admitted and nine abstained: one of four in development and two of eight
+in the later segment.
 
-## Execution and licensing boundary
-
-The study does not clone, build, import, or execute Scorch. It does not run the
-original test suite or native extension. Commit metadata and diffs were inspected
-through a read-only GitHub connector. The artifact redistributes no upstream
-source file or patch. Its adapters are original clean-room semantic models, and
-`data/public-corpus.csv` retains the source URL and production-file scope for
-each record.
-
-The final denominator contains four admitted complete source adapters and eight
-abstentions. Development admits two of four; the later segment admits two of
-eight. These are descriptive coverage counts for this fixed corpus, not an
-estimate of compiler-patch prevalence.
+The study does not execute Scorch. Physical sparse storage, object identity,
+allocation/lifetime, heuristic scheduling, IEEE floating point, raw memory,
+threading, and whole-runtime dispatch remain outside the source-adapter scope.

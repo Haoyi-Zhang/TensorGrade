@@ -2,11 +2,13 @@
 """Offline integrity audit for the delivered scholarly bibliography.
 
 The command verifies BibTeX, the complete frozen metadata inventory, the exact
-citation-key set, and a dated primary-record spot-check inventory.  Network
-resolution is intentionally not part of reproduction: the spot checks record
-what was manually rechecked against primary scholarly or publisher records on
-2026-09-19.  The audit therefore establishes delivered-record consistency and
-basic bibliographic completeness, not an independent literature review.
+citation-key set, a complete dated primary-record audit inventory, and a
+sentence-level citation-context ledger. Network
+resolution is intentionally not part of reproduction: the primary-record file
+freezes the DOI, official proceedings, USENIX, or DBLP reconciliation completed
+on 2026-09-29. The audit establishes delivered-record consistency and
+bibliographic identity/completeness, not an independent literature review or a
+claim that every cited argument was independently reread.
 """
 from __future__ import annotations
 
@@ -27,9 +29,12 @@ INVENTORY_FIELDS = [
     "publisher", "identifier_kind", "identifier", "record_url",
     "verification_basis", "checked_on", "status",
 ]
-SPOTCHECK_FIELDS = [
+PRIMARY_RECORD_FIELDS = [
     "key", "checked_on", "official_record_url", "source_class",
     "matched_fields", "status", "note",
+]
+CONTEXT_AUDIT_FIELDS = [
+    "key", "checked_on", "citation_locations", "context_excerpt", "status", "note",
 ]
 STABLE_URL_HOSTS = {
     "www.usenix.org",
@@ -173,7 +178,8 @@ def audit(
     bibliography: Path,
     inventory: Path,
     citations: Path,
-    spotchecks: Path | None = None,
+    primary_records: Path | None = None,
+    context_audit: Path | None = None,
 ):
     errors: list[str] = []
     entries = parse_bibtex(bibliography.read_text(encoding="utf-8"))
@@ -271,39 +277,74 @@ def audit(
     if len(identifiers) != len(set(identifiers)):
         errors.append("duplicate stable identifier")
 
-    spotcheck_rows: list[dict[str, str]] = []
-    spotcheck_dates: list[dt.date] = []
-    if spotchecks is not None:
-        spotcheck_rows = _read_csv(
-            spotchecks, SPOTCHECK_FIELDS, errors, "primary-record spot checks"
+    primary_rows: list[dict[str, str]] = []
+    primary_dates: list[dt.date] = []
+    if primary_records is not None:
+        primary_rows = _read_csv(
+            primary_records, PRIMARY_RECORD_FIELDS, errors, "primary-record audit"
         )
-        spot_by_key = {row.get("key", ""): row for row in spotcheck_rows}
-        if len(spot_by_key) != len(spotcheck_rows):
-            errors.append("duplicate primary-record spot-check key")
-        if not set(spot_by_key).issubset(bib):
+        primary_by_key = {row.get("key", ""): row for row in primary_rows}
+        if len(primary_by_key) != len(primary_rows):
+            errors.append("duplicate primary-record audit key")
+        if set(primary_by_key) != set(bib):
             errors.append(
-                "primary-record spot checks contain unknown keys: "
-                f"{sorted(set(spot_by_key) - set(bib))}"
+                "primary-record audit key mismatch: "
+                f"missing={sorted(set(bib) - set(primary_by_key))}, "
+                f"unknown={sorted(set(primary_by_key) - set(bib))}"
             )
-        for key, row in spot_by_key.items():
-            if row.get("status") != "verified-live-metadata":
-                errors.append(f"{key}: spot-check status must be verified-live-metadata")
+        for key, row in primary_by_key.items():
+            if row.get("status") != "verified-primary-record":
+                errors.append(
+                    f"{key}: primary-record status must be verified-primary-record"
+                )
             parsed_date = _parse_date(
-                row.get("checked_on", ""), f"{key}: spot-check checked_on", errors
+                row.get("checked_on", ""), f"{key}: primary-record checked_on", errors
             )
             if parsed_date:
-                spotcheck_dates.append(parsed_date)
+                primary_dates.append(parsed_date)
             if key in inv and normalize(row.get("official_record_url", "")) != normalize(
                 inv[key].get("record_url", "")
             ):
-                errors.append(f"{key}: spot-check URL differs from frozen inventory")
+                errors.append(f"{key}: primary-record URL differs from frozen inventory")
             url = row.get("official_record_url", "")
             if not url.startswith("https://"):
-                errors.append(f"{key}: spot-check URL is not HTTPS")
+                errors.append(f"{key}: primary-record URL is not HTTPS")
             if not normalize(row.get("source_class", "")):
-                errors.append(f"{key}: empty spot-check source_class")
+                errors.append(f"{key}: empty primary-record source_class")
             if not normalize(row.get("matched_fields", "")):
-                errors.append(f"{key}: empty spot-check matched_fields")
+                errors.append(f"{key}: empty primary-record matched_fields")
+            if not normalize(row.get("note", "")):
+                errors.append(f"{key}: empty primary-record note")
+
+    context_rows: list[dict[str, str]] = []
+    context_dates: list[dt.date] = []
+    if context_audit is not None:
+        context_rows = _read_csv(
+            context_audit, CONTEXT_AUDIT_FIELDS, errors, "citation-context audit"
+        )
+        context_by_key = {row.get("key", ""): row for row in context_rows}
+        if len(context_by_key) != len(context_rows):
+            errors.append("duplicate citation-context audit key")
+        if set(context_by_key) != set(bib):
+            errors.append(
+                "citation-context audit key mismatch: "
+                f"missing={sorted(set(bib) - set(context_by_key))}, "
+                f"unknown={sorted(set(context_by_key) - set(bib))}"
+            )
+        for key, row in context_by_key.items():
+            if row.get("status") != "context-reviewed":
+                errors.append(f"{key}: citation-context status must be context-reviewed")
+            parsed_date = _parse_date(
+                row.get("checked_on", ""), f"{key}: context checked_on", errors
+            )
+            if parsed_date:
+                context_dates.append(parsed_date)
+            if not normalize(row.get("citation_locations", "")):
+                errors.append(f"{key}: empty citation_locations")
+            if not normalize(row.get("context_excerpt", "")):
+                errors.append(f"{key}: empty context_excerpt")
+            if not normalize(row.get("note", "")):
+                errors.append(f"{key}: empty citation-context note")
 
     report = {
         "bibliography_entries": len(entries),
@@ -316,18 +357,23 @@ def audit(
         "verified_inventory_records": sum(
             row.get("status") == "verified-metadata" for row in rows
         ),
-        "primary_record_spotchecks": len(spotcheck_rows),
+        "primary_record_checks": len(primary_rows),
+        "citation_context_checks": len(context_rows),
         "latest_inventory_check": max(checked_dates).isoformat() if checked_dates else None,
-        "latest_primary_record_spotcheck": (
-            max(spotcheck_dates).isoformat() if spotcheck_dates else None
+        "latest_primary_record_check": (
+            max(primary_dates).isoformat() if primary_dates else None
+        ),
+        "latest_citation_context_check": (
+            max(context_dates).isoformat() if context_dates else None
         ),
         "errors": errors,
         "passed": not errors,
         "interpretation": (
             "Offline consistency and completeness check against the delivered "
-            "frozen metadata inventory plus a dated primary-record spot-check "
-            "inventory. Reproduction does not resolve the network and this is "
-            "not an independent literature review."
+            "frozen metadata inventory, a complete dated primary-record audit, "
+            "and a citation-context ledger for every cited key. Reproduction "
+            "does not resolve the network; this is not an independent literature "
+            "review or source content reread."
         ),
     }
     return report
@@ -340,11 +386,24 @@ def main():
     parser.add_argument("--inventory", type=Path, default=root / "data/reference-audit.csv")
     parser.add_argument("--citations", type=Path, default=root / "data/cited-reference-keys.txt")
     parser.add_argument(
-        "--spotchecks", type=Path, default=root / "data/reference-live-spot-check.csv"
+        "--primary-records",
+        type=Path,
+        default=root / "data/reference-primary-record-audit.csv",
+    )
+    parser.add_argument(
+        "--context-audit",
+        type=Path,
+        default=root / "data/reference-context-audit.csv",
     )
     parser.add_argument("--output", type=Path, default=root / "results/reference-audit.json")
     args = parser.parse_args()
-    report = audit(args.bibliography, args.inventory, args.citations, args.spotchecks)
+    report = audit(
+        args.bibliography,
+        args.inventory,
+        args.citations,
+        args.primary_records,
+        args.context_audit,
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     print(json.dumps(report, sort_keys=True))

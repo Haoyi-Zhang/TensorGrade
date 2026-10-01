@@ -12,8 +12,7 @@ AST interpreter with exact `Fraction` arithmetic, independently validates the
 case grammar, sorts, bounds, and witness schema, and does not import the encoder
 or solver. `oracle.py` aggregates coefficient rows and enumerates bounded
 occupancy masks. `certificates.py` reconstructs compact rational witnesses from
-concrete rows rather than copying solver rational assignments. Public adapters
-implement separate before and after paths plus five mutants per adapter.
+concrete rows rather than copying solver rational assignments. Public adapters implement independent before and after paths; 18 mutants are distributed across the three admitted adapters.
 
 These paths can expose inconsistencies, but they were developed and audited in
 one AI-assisted research process. They are not independent human replication or
@@ -29,13 +28,20 @@ proof-assistant verification.
 - 252 finite-shape oracle checks containing 3,259 finer obligations.
 - 167 successful direct refutation replays.
 - 162 compact finite-read certificates: 72 zero-cell, 83 one-cell, 7 two-cell.
-- 12 public commits: 4 admitted complete adapters and 8 abstentions.
-- 29,740 bounded adapter states with zero mismatches.
-- 20 synthetic mutants: developer examples detect 16, seeded random 19, and
-  deterministic stratification all 20 at equal budgets.
+- 12 public commits: 3 admitted complete adapters and 9 abstentions.
+- 526 admitted bounded adapter states with zero mismatches.
+- P01 candidate diagnostics: 29,222 matching successful-domain states and four
+  scalar boundary controls, three of which differ.
+- 18 synthetic mutants: repeated developer indices detect 14, seeded random with
+  replacement 18, and an evenly spaced enumeration-index grid 18. Each mutant
+  has at most 64 candidate slots; early stopping uses 325, 121, and 318 actual
+  executions.
 - 83 cited bibliography records match the frozen inventory: 77 DOI records and
-  six stable official or DBLP locators; 16 load-bearing or newest records also
-  have a dated primary-record metadata spot check.
+  six stable official or DBLP locators; all 83 cited keys also have a dated
+  primary-record metadata audit, and all 83 have citation-context records.
+- Post-hoc seed sensitivity (excluded from main counts): eight additional seeds,
+  256 admitted cases, 2,048 queries, 512 oracle checks, and 500 replayed compact
+  certificates, with zero validation errors.
 
 These counts describe different objects and must not be summed. Generated pairs,
 row pairs, adapter states, and mutants are not public bug counts.
@@ -62,8 +68,8 @@ coordinate-resolution blocks/bounds, and initialization precedence.
 Scientific intake recorded four cgroup-quota CPU cores, 4 GiB memory, no swap,
 and adequate writable space. Reproduction runs children sequentially with one
 worker, 2 GiB address space, 105/110 CPU seconds, 115 wall seconds, and 1,500 ms
-per SMT query. The retained five-phase run used 9.081933 whole-child process CPU
-seconds and a 128,980 KiB child peak-RSS upper bound.
+per SMT query. The retained repaired six-phase run used 13.706612 whole-child
+process CPU seconds and a 130,424 KiB child peak-RSS upper bound.
 
 Early exploratory local commands were not all individually metered. The resource
 ledger conservatively charges the entire early wall interval at four CPU cores
@@ -79,9 +85,10 @@ Semantic statuses, certificates, public decisions, and empty error lists are the
 targets. Direct replay checks SAT witnesses but cannot certify UNSAT.
 
 The bibliography audit is an offline consistency and completeness check against
-a frozen manually verified inventory plus a delivered dated primary-record
-spot-check inventory. Reproduction does not re-resolve remote records, and neither
-inventory constitutes independent literature review. The public study does not reproduce Scorch execution. It validates four complete
+a frozen manually verified inventory, a delivered complete dated primary-record
+audit for all 83 cited keys, and a citation-context ledger. Reproduction does not
+re-resolve remote records, and none of these files constitutes independent
+literature review or source-content rereading. The public study does not reproduce Scorch execution. It validates three complete
 clean-room source adapters conditional on source invariants, scope closure, and
 unchanged downstream components. Original repository tests, native compilation,
 floating-point behavior, physical sparse layout, memory ownership, and threading

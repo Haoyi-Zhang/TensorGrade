@@ -1,6 +1,6 @@
 # Literature and source-reading scope
 
-Final calibration date: 2026-09-19. Bibliographic details used by the manuscript
+Final calibration date: 2026-09-29. Bibliographic details used by the manuscript
 are in `paper/references.bib` in the full project; the standalone artifact retains
 primary workflow/source locators in `external_resources.csv`. The main paper has
 83 distinct cited references.
@@ -60,20 +60,22 @@ prediction is asserted.
 Available full text or publisher HTML was inspected for substantive method,
 evaluation, and threat structure. Metadata-only pages were not used for
 content-specific scientific claims. The manuscript favors original papers and
-formal records over blogs or search snippets. A fresh 2026-09-19 primary-record
-metadata spot check covers 16 load-bearing or newest records, including Mirage
-and EqiForge; it is retained as `data/reference-live-spot-check.csv` and is not
-presented as independent review.
+formal records over blogs or search snippets. A complete 2026-09-29 primary-record metadata audit covers all 83 cited keys,
+including Mirage and EqiForge; it is retained as
+`data/reference-primary-record-audit.csv`;
+`data/reference-context-audit.csv` separately maps every key to its main-paper
+use. The offline reproduction checks both frozen files but does not present them
+as independent review or source-content rereading.
 
 ## Public source reading
 
 The complete twelve-row Scorch denominator, decisions, changed production files,
-and URLs are in `data/public-corpus.csv`. Four admitted diffs received complete
-source-region reasoning; the eight abstentions were inspected far enough to
+and URLs are in `data/public-corpus.csv`. Three admitted diffs received complete
+source-region reasoning; the nine abstentions were inspected far enough to
 identify the unresolved semantic boundary. Long machine/runtime diffs were not
 pretended to be fully modeled. No upstream source is bundled or executed.
 
 The official TOSEM author guide and ACM submission pages returned HTTP 403 at the
-2026-09-19 final recheck. This accessibility failure affects submission-readiness
+2026-09-29 final recheck. This accessibility failure affects submission-readiness
 verification, not the scholarly claims. The supplied current ACM template remains
 the internal layout basis.

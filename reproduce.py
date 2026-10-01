@@ -18,6 +18,7 @@ def main():
  ('reference-audit',[sys.executable,'audit_references.py','--output',str(out/'reference-audit.json')]),
  ('pilot',[sys.executable,'run_pilot.py','--output',str(out/'pilot.json')]),
  ('diagnostics',[sys.executable,'run_diagnostics.py','--output',str(out/'diagnostics.json')]),
+ ('robustness-audit',[sys.executable,'run_robustness_audit.py','--output',str(out/'robustness-audit.json')]),
  ('public-study',[sys.executable,'run_public_study.py','--corpus','data/public-corpus.csv','--output',str(out/'public-study.json'),'--seed','20260915','--budget','64'])]
  records=[]
  for name,cmd in commands:
@@ -38,7 +39,7 @@ def main():
   records.append(rec);print(json.dumps(rec),flush=True)
   if timed_out or p.returncode:break
  report={'runs':records,'total_process_cpu_seconds':sum(r['process_cpu_seconds'] for r in records),
-  'all_commands_succeeded':len(records)==5 and all(r['exit_code']==0 and not r['wall_timeout'] for r in records),
+  'all_commands_succeeded':len(records)==6 and all(r['exit_code']==0 and not r['wall_timeout'] for r in records),
   'interpretation':'Command success and finite checks are not machine-checked general proofs, upstream execution, or independent review of the public adapters.',
   'limits':{'sequential_workers':1,'address_space_bytes':2*1024**3,'wall_seconds_per_child':115,'cpu_soft_seconds':105,'cpu_hard_seconds':110}}
  (out/'execution.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')

@@ -4,14 +4,15 @@
   "corpus_count": 12,
   "development_count": 4,
   "held_out_count": 8,
-  "admitted_count": 4,
-  "abstained_count": 8,
-  "coverage": 0.3333333333333333,
-  "development_admitted": 2,
+  "admitted_count": 3,
+  "abstained_count": 9,
+  "coverage": 0.25,
+  "development_admitted": 1,
   "held_out_admitted": 2,
-  "cpu_seconds": 2.135486322,
-  "wall_seconds": 2.136251580000021,
-  "peak_rss_kib": 105776,
+  "source_evidence": "data/public-adapter-evidence.json",
+  "cpu_seconds": 2.215865526,
+  "wall_seconds": 2.217888561000109,
+  "peak_rss_kib": 98732,
   "errors": [],
-  "interpretation": "Admitted means the entire production diff was mapped to a declared source adapter and its adapter equivalence was checked on the retained bounded domain, backed by a separate prose universal proof. It is not an execution of upstream Scorch or an independent proof review. Abstentions remain in the denominator. Mutants are synthetic negative controls, not historical Scorch defects."
+  "interpretation": "Admitted means every production hunk was dispositioned and a source-derived invariant, independent before/after model, universal argument, and unchanged-downstream congruence were retained. P01 is an abstained candidate: its 1--4 operand range is only a finite validation boundary. P08 has 96 equivalence-domain cases and four separately executed excluded-domain controls. The study does not execute upstream Scorch or constitute independent proof review. Mutants are synthetic controls."
 }

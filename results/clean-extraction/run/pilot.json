@@ -81,7 +81,7 @@
       "mode": "defective-congruence-ablation",
       "queries": [
         {
-          "cpu_seconds": 0.0012004649999999284,
+          "cpu_seconds": 0.0012351689999998694,
           "detail": "",
           "encoding_bytes": 153,
           "obligation": "precondition",
@@ -89,37 +89,37 @@
           "values": {
             "n0": "1"
           },
-          "wall_seconds": 0.0008513139998740371
+          "wall_seconds": 0.0008857409998199728
         },
         {
-          "cpu_seconds": 0.0007584179999999829,
+          "cpu_seconds": 0.0009435740000001136,
           "detail": "",
           "encoding_bytes": 194,
           "obligation": "nonnegative-dimensions",
           "status": "unsat",
           "values": {},
-          "wall_seconds": 0.0006936080001196387
+          "wall_seconds": 0.0008772779999617342
         },
         {
-          "cpu_seconds": 0.0008420120000001141,
+          "cpu_seconds": 0.0008280829999998129,
           "detail": "",
           "encoding_bytes": 474,
           "obligation": "active-read-bounds",
           "status": "unsat",
           "values": {},
-          "wall_seconds": 0.0007990260000951821
+          "wall_seconds": 0.0007765870000184805
         },
         {
-          "cpu_seconds": 0.0005405839999998996,
+          "cpu_seconds": 0.0005342150000000601,
           "detail": "",
           "encoding_bytes": 990,
           "obligation": "shape",
           "status": "unsat",
           "values": {},
-          "wall_seconds": 0.00046081999994385114
+          "wall_seconds": 0.0004299160000300617
         },
         {
-          "cpu_seconds": 0.0008528680000001732,
+          "cpu_seconds": 0.0009693530000001171,
           "detail": "",
           "encoding_bytes": 1069,
           "obligation": "value",
@@ -137,10 +137,10 @@
             "x1": "0",
             "x2": "1/2"
           },
-          "wall_seconds": 0.0010556510001151764
+          "wall_seconds": 0.0010774689999379916
         },
         {
-          "cpu_seconds": 0.0011654529999998164,
+          "cpu_seconds": 0.0010411390000000242,
           "detail": "",
           "encoding_bytes": 1077,
           "obligation": "zero-support",
@@ -158,10 +158,10 @@
             "x1": "0",
             "x2": "0"
           },
-          "wall_seconds": 0.001025134999963484
+          "wall_seconds": 0.0009953759999916656
         },
         {
-          "cpu_seconds": 0.0009329270000000278,
+          "cpu_seconds": 0.0010053869999999687,
           "detail": "",
           "encoding_bytes": 1067,
           "obligation": "stored-support",
@@ -179,10 +179,10 @@
             "x1": "0",
             "x2": "0"
           },
-          "wall_seconds": 0.0008667970000715286
+          "wall_seconds": 0.0010888870001508621
         },
         {
-          "cpu_seconds": 0.0007883619999999869,
+          "cpu_seconds": 0.0023455109999999113,
           "detail": "",
           "encoding_bytes": 1159,
           "obligation": "term-order",
@@ -200,7 +200,7 @@
             "x1": "0",
             "x2": "0"
           },
-          "wall_seconds": 0.0007818410001618759
+          "wall_seconds": 0.002200776999870868
         }
       ],
       "terms": 3
@@ -242,7 +242,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.004104013000000073,
+            "cpu_seconds": 0.006436149999999974,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -250,61 +250,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.003045909999855212
+            "wall_seconds": 0.003939169999966907
           },
           {
-            "cpu_seconds": 0.0016858469999999626,
+            "cpu_seconds": 0.0016743120000000111,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001367136999988361
+            "wall_seconds": 0.0014462439999078924
           },
           {
-            "cpu_seconds": 0.00036957900000000876,
+            "cpu_seconds": 0.000579493000000042,
             "detail": "",
             "encoding_bytes": 289,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003432139999404171
+            "wall_seconds": 0.0005474530000810773
           },
           {
-            "cpu_seconds": 0.00024951099999992454,
+            "cpu_seconds": 0.0002565820000000052,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002305949999481527
+            "wall_seconds": 0.00023536399999102287
           },
           {
-            "cpu_seconds": 0.00022858000000003376,
+            "cpu_seconds": 0.00022820899999997923,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002119979999406496
+            "wall_seconds": 0.00021104799998283852
           },
           {
-            "cpu_seconds": 0.0002696509999999819,
+            "cpu_seconds": 0.0002760609999999941,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002547110000250541
+            "wall_seconds": 0.0002600610000627057
           },
           {
-            "cpu_seconds": 0.0002692000000000805,
+            "cpu_seconds": 0.00027276600000003537,
             "detail": "",
             "encoding_bytes": 414,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023835699994378956
+            "wall_seconds": 0.0002395999999862397
           }
         ],
         "status": "proved",
@@ -387,7 +387,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.00440553999999993,
+            "cpu_seconds": 0.0030905099999999353,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -395,55 +395,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009864260000540526
+            "wall_seconds": 0.0010436879999815574
           },
           {
-            "cpu_seconds": 0.001216970000000095,
+            "cpu_seconds": 0.0016929900000000053,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011129659999369323
+            "wall_seconds": 0.0014666739998574485
           },
           {
-            "cpu_seconds": 0.00038941900000000196,
+            "cpu_seconds": 0.0003676770000000662,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003662379999695986
+            "wall_seconds": 0.00034276499991392484
           },
           {
-            "cpu_seconds": 0.0002528559999999125,
+            "cpu_seconds": 0.0002796869999999174,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023370000008071656
+            "wall_seconds": 0.00026205399990431033
           },
           {
-            "cpu_seconds": 0.00022796899999999454,
+            "cpu_seconds": 0.00023070300000005428,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021179700001994206
+            "wall_seconds": 0.00021261999995658698
           },
           {
-            "cpu_seconds": 0.00022669699999999793,
+            "cpu_seconds": 0.00047733100000002526,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021133600012035458
+            "wall_seconds": 0.0004558550001547701
           },
           {
-            "cpu_seconds": 0.0017577340000000108,
+            "cpu_seconds": 0.0015165469999999237,
             "detail": "",
             "encoding_bytes": 470,
             "obligation": "support-coherence",
@@ -454,7 +454,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0017983719999392633
+            "wall_seconds": 0.0015676959999382234
           }
         ],
         "status": "refuted",
@@ -575,7 +575,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0035722720000000985,
+            "cpu_seconds": 0.004406770000000004,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -583,61 +583,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.001237163000041619
+            "wall_seconds": 0.0013470639999013656
           },
           {
-            "cpu_seconds": 0.0015121589999999019,
+            "cpu_seconds": 0.0013223980000000024,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001151284000115993
+            "wall_seconds": 0.0012109400001918402
           },
           {
-            "cpu_seconds": 0.00036277900000003527,
+            "cpu_seconds": 0.0006788600000000589,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003424020001148165
+            "wall_seconds": 0.0006530810001095233
           },
           {
-            "cpu_seconds": 0.0003815670000000271,
+            "cpu_seconds": 0.0002719049999999612,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002926580000348622
+            "wall_seconds": 0.0002499350000562117
           },
           {
-            "cpu_seconds": 0.00024791899999998535,
+            "cpu_seconds": 0.0002314450000000523,
             "detail": "",
             "encoding_bytes": 283,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022843200008537679
+            "wall_seconds": 0.00021436199995150673
           },
           {
-            "cpu_seconds": 0.0008312659999999417,
+            "cpu_seconds": 0.0008626739999999522,
             "detail": "",
             "encoding_bytes": 328,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008190660000764183
+            "wall_seconds": 0.00084984699992674
           },
           {
-            "cpu_seconds": 0.000883243000000089,
+            "cpu_seconds": 0.0009050870000000266,
             "detail": "",
             "encoding_bytes": 475,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008433930001956469
+            "wall_seconds": 0.0008624060001238831
           }
         ],
         "status": "proved",
@@ -724,7 +724,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0026690790000000186,
+            "cpu_seconds": 0.002342025999999997,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -732,61 +732,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008722959998976876
+            "wall_seconds": 0.001237730000184456
           },
           {
-            "cpu_seconds": 0.0012026680000000178,
+            "cpu_seconds": 0.0014677050000000413,
             "detail": "",
             "encoding_bytes": 186,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010807480000494252
+            "wall_seconds": 0.0013565180001933186
           },
           {
-            "cpu_seconds": 0.0004618969999999889,
+            "cpu_seconds": 0.0003964199999999529,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004402089998620795
+            "wall_seconds": 0.0003706570000758802
           },
           {
-            "cpu_seconds": 0.0003374619999999551,
+            "cpu_seconds": 0.0003572219999999904,
             "detail": "",
             "encoding_bytes": 375,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003188270000009652
+            "wall_seconds": 0.00031516299986833474
           },
           {
-            "cpu_seconds": 0.00028686700000002396,
+            "cpu_seconds": 0.00024755799999998107,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002734789998157794
+            "wall_seconds": 0.00022751200003767735
           },
           {
-            "cpu_seconds": 0.0003209669999999498,
+            "cpu_seconds": 0.000291503999999998,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002429740000025049
+            "wall_seconds": 0.00027652600010696915
           },
           {
-            "cpu_seconds": 0.0008733280000000621,
+            "cpu_seconds": 0.0009234850000000572,
             "detail": "",
             "encoding_bytes": 531,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008341089999248652
+            "wall_seconds": 0.0008797219998086803
           }
         ],
         "status": "proved",
@@ -873,7 +873,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.002905370000000018,
+            "cpu_seconds": 0.0017084830000000384,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -881,55 +881,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0012676480000664014
+            "wall_seconds": 0.0014576609999039647
           },
           {
-            "cpu_seconds": 0.001309696999999943,
+            "cpu_seconds": 0.0019463570000000097,
             "detail": "",
             "encoding_bytes": 186,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001173686999891288
+            "wall_seconds": 0.001798423000082039
           },
           {
-            "cpu_seconds": 0.0003592850000000425,
+            "cpu_seconds": 0.0008964040000000173,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003371440000137227
+            "wall_seconds": 0.0008700369999132818
           },
           {
-            "cpu_seconds": 0.0007378069999999237,
+            "cpu_seconds": 0.0009274009999999944,
             "detail": "",
             "encoding_bytes": 475,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007205080000858288
+            "wall_seconds": 0.0009046590000707511
           },
           {
-            "cpu_seconds": 0.0003392140000000321,
+            "cpu_seconds": 0.0005806640000000085,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003191580001384864
+            "wall_seconds": 0.0005585789999713597
           },
           {
-            "cpu_seconds": 0.0002798160000000438,
+            "cpu_seconds": 0.0005127629999999161,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002635139999256353
+            "wall_seconds": 0.0004951539999638044
           },
           {
-            "cpu_seconds": 0.0015857179999999582,
+            "cpu_seconds": 0.0028480700000000914,
             "detail": "",
             "encoding_bytes": 631,
             "obligation": "support-coherence",
@@ -940,7 +940,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0016184630001134792
+            "wall_seconds": 0.0028933180001331493
           }
         ],
         "status": "refuted",
@@ -1065,7 +1065,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.004307033999999987,
+            "cpu_seconds": 0.0030489879999999747,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1073,61 +1073,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.001510962000111249
+            "wall_seconds": 0.0017457129999911558
           },
           {
-            "cpu_seconds": 0.0013537330000000791,
+            "cpu_seconds": 0.0019021110000001507,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011909229999673698
+            "wall_seconds": 0.0017201949999616772
           },
           {
-            "cpu_seconds": 0.0008589169999999591,
+            "cpu_seconds": 0.0009324980000000593,
             "detail": "",
             "encoding_bytes": 327,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008358109998880536
+            "wall_seconds": 0.0008995209998374776
           },
           {
-            "cpu_seconds": 0.0012258029999999698,
+            "cpu_seconds": 0.0015652099999998725,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0012334860000464687
+            "wall_seconds": 0.0015478860000257555
           },
           {
-            "cpu_seconds": 0.00044822700000002325,
+            "cpu_seconds": 0.0003744270000001215,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000399727999820243
+            "wall_seconds": 0.0003480429998035106
           },
           {
-            "cpu_seconds": 0.00025239499999996085,
+            "cpu_seconds": 0.000302710999999789,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023294899983739015
+            "wall_seconds": 0.000284288000102606
           },
           {
-            "cpu_seconds": 0.0013707380000000935,
+            "cpu_seconds": 0.0017826430000000837,
             "detail": "",
             "encoding_bytes": 680,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001307496999970681
+            "wall_seconds": 0.0017088780000449333
           }
         ],
         "status": "proved",
@@ -1214,7 +1214,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.003097776000000052,
+            "cpu_seconds": 0.0030802859999998766,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1222,55 +1222,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011775919999763573
+            "wall_seconds": 0.001686524999968242
           },
           {
-            "cpu_seconds": 0.0015817320000000024,
+            "cpu_seconds": 0.0015409230000000829,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0014356700000917044
+            "wall_seconds": 0.0013736240000525868
           },
           {
-            "cpu_seconds": 0.00041370499999993093,
+            "cpu_seconds": 0.00039822299999991984,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003886119998242066
+            "wall_seconds": 0.00037114699989615474
           },
           {
-            "cpu_seconds": 0.001189589000000102,
+            "cpu_seconds": 0.0011739969999999822,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011742679998860694
+            "wall_seconds": 0.0011587110000164103
           },
           {
-            "cpu_seconds": 0.0003691189999999178,
+            "cpu_seconds": 0.0004542970000001034,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00034341399987170007
+            "wall_seconds": 0.0004311879999931989
           },
           {
-            "cpu_seconds": 0.00029020099999998994,
+            "cpu_seconds": 0.0002533369999999646,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002729180000642373
+            "wall_seconds": 0.00023304000001189706
           },
           {
-            "cpu_seconds": 0.001480622000000098,
+            "cpu_seconds": 0.0016156139999998764,
             "detail": "",
             "encoding_bytes": 692,
             "obligation": "support-coherence",
@@ -1281,7 +1281,7 @@
               "u0": "0",
               "v0": "1"
             },
-            "wall_seconds": 0.0014883879998706107
+            "wall_seconds": 0.0016326630000094156
           }
         ],
         "status": "refuted",
@@ -1402,7 +1402,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.00451308100000003,
+            "cpu_seconds": 0.0027358019999998984,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1410,55 +1410,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011620990001119935
+            "wall_seconds": 0.001548486999809029
           },
           {
-            "cpu_seconds": 0.0012277050000000234,
+            "cpu_seconds": 0.0014856910000000667,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011325149998810957
+            "wall_seconds": 0.001339443000006213
           },
           {
-            "cpu_seconds": 0.0008110159999999977,
+            "cpu_seconds": 0.0008965549999999656,
             "detail": "",
             "encoding_bytes": 403,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007577149999633548
+            "wall_seconds": 0.0008652399999391491
           },
           {
-            "cpu_seconds": 0.00038460200000001166,
+            "cpu_seconds": 0.0004029889999999092,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003635340001437726
+            "wall_seconds": 0.0003798510001615796
           },
           {
-            "cpu_seconds": 0.00023782399999994208,
+            "cpu_seconds": 0.00037739200000008744,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002194189999045193
+            "wall_seconds": 0.0003615929999796208
           },
           {
-            "cpu_seconds": 0.00023141400000004086,
+            "cpu_seconds": 0.0002484400000000164,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021440099999381346
+            "wall_seconds": 0.00022847299987915903
           },
           {
-            "cpu_seconds": 0.0017371929999999702,
+            "cpu_seconds": 0.0015146649999999706,
             "detail": "",
             "encoding_bytes": 534,
             "obligation": "support-coherence",
@@ -1469,7 +1469,7 @@
               "u0": "0",
               "v0": "1"
             },
-            "wall_seconds": 0.0017866549999325798
+            "wall_seconds": 0.0015621180000380264
           }
         ],
         "status": "refuted",
@@ -1590,7 +1590,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.004346432999999927,
+            "cpu_seconds": 0.001938095000000084,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1598,61 +1598,61 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011834120000457915
+            "wall_seconds": 0.001154745000121693
           },
           {
-            "cpu_seconds": 0.0012300280000000496,
+            "cpu_seconds": 0.0015237180000000627,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011257150001711125
+            "wall_seconds": 0.001415577999978268
           },
           {
-            "cpu_seconds": 0.0005518409999999419,
+            "cpu_seconds": 0.0006028869999998854,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005313960000421503
+            "wall_seconds": 0.0005812029999106016
           },
           {
-            "cpu_seconds": 0.00026577500000002363,
+            "cpu_seconds": 0.0003286200000001127,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002446559999498277
+            "wall_seconds": 0.0003082030000314262
           },
           {
-            "cpu_seconds": 0.00023025300000001359,
+            "cpu_seconds": 0.00046923799999998295,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002134300000307121
+            "wall_seconds": 0.0004550940000171977
           },
           {
-            "cpu_seconds": 0.0002787539999999922,
+            "cpu_seconds": 0.00026512499999986616,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002642760000526323
+            "wall_seconds": 0.00024157300003935234
           },
           {
-            "cpu_seconds": 0.00028876900000007755,
+            "cpu_seconds": 0.0003417180000000464,
             "detail": "",
             "encoding_bytes": 470,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002491830000508344
+            "wall_seconds": 0.00030280500004664646
           }
         ],
         "status": "proved",
@@ -1739,7 +1739,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.00189695099999998,
+            "cpu_seconds": 0.004101334000000012,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -1747,55 +1747,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008847639999203238
+            "wall_seconds": 0.000893282999868461
           },
           {
-            "cpu_seconds": 0.001334583999999972,
+            "cpu_seconds": 0.0013316020000000428,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00122678600018844
+            "wall_seconds": 0.0012201540000660316
           },
           {
-            "cpu_seconds": 0.0003656439999999428,
+            "cpu_seconds": 0.0003815080000000304,
             "detail": "",
             "encoding_bytes": 339,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003411610000512155
+            "wall_seconds": 0.0003575570001430606
           },
           {
-            "cpu_seconds": 0.00028933000000008757,
+            "cpu_seconds": 0.00025596099999991573,
             "detail": "",
             "encoding_bytes": 370,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00027138599989484646
+            "wall_seconds": 0.0002367859999594657
           },
           {
-            "cpu_seconds": 0.0002700220000000364,
+            "cpu_seconds": 0.0002528770000000957,
             "detail": "",
             "encoding_bytes": 278,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00025307900000370864
+            "wall_seconds": 0.00023735700006000116
           },
           {
-            "cpu_seconds": 0.00024300099999985392,
+            "cpu_seconds": 0.0002370119999999254,
             "detail": "",
             "encoding_bytes": 318,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022589800005334837
+            "wall_seconds": 0.0002188079999996262
           },
           {
-            "cpu_seconds": 0.0014202520000001773,
+            "cpu_seconds": 0.001307887000000063,
             "detail": "",
             "encoding_bytes": 558,
             "obligation": "support-coherence",
@@ -1806,7 +1806,7 @@
               "u0": "0",
               "v0": "1"
             },
-            "wall_seconds": 0.0014720940000643168
+            "wall_seconds": 0.001354044999970938
           }
         ],
         "status": "refuted",
@@ -1923,7 +1923,7 @@
         "interpretation": "free input values; clique-compatible occupancy; exact rational arithmetic",
         "queries": [
           {
-            "cpu_seconds": 0.0030870410000001236,
+            "cpu_seconds": 0.0036194970000000826,
             "detail": "",
             "encoding_bytes": 153,
             "obligation": "precondition",
@@ -1931,61 +1931,61 @@
             "values": {
               "n0": "0"
             },
-            "wall_seconds": 0.0009557609998864791
+            "wall_seconds": 0.0015753370000766154
           },
           {
-            "cpu_seconds": 0.0008335989999999072,
+            "cpu_seconds": 0.0012180330000000072,
             "detail": "",
             "encoding_bytes": 184,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007437539998136344
+            "wall_seconds": 0.0011111999999684485
           },
           {
-            "cpu_seconds": 0.0004190630000000528,
+            "cpu_seconds": 0.00037997599999983755,
             "detail": "",
             "encoding_bytes": 288,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003967939999256487
+            "wall_seconds": 0.00035328099988873873
           },
           {
-            "cpu_seconds": 0.0002504219999999169,
+            "cpu_seconds": 0.0003022489999999767,
             "detail": "",
             "encoding_bytes": 319,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00022974399985287164
+            "wall_seconds": 0.0002832650000073045
           },
           {
-            "cpu_seconds": 0.00027937599999994234,
+            "cpu_seconds": 0.00023794500000007268,
             "detail": "",
             "encoding_bytes": 277,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00026402499997857376
+            "wall_seconds": 0.0002185090002058132
           },
           {
-            "cpu_seconds": 0.00033719100000006996,
+            "cpu_seconds": 0.00022936099999992798,
             "detail": "",
             "encoding_bytes": 317,
             "obligation": "compatibility-symmetric",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003209200001492718
+            "wall_seconds": 0.00021318099993550277
           },
           {
-            "cpu_seconds": 0.000276560999999953,
+            "cpu_seconds": 0.00025549000000002486,
             "detail": "",
             "encoding_bytes": 413,
             "obligation": "support-coherence",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00024476700014020025
+            "wall_seconds": 0.00022740099984730477
           }
         ],
         "status": "proved",
@@ -2055,7 +2055,7 @@
         "id": "non-reflexive-mask",
         "queries": [
           {
-            "cpu_seconds": 0.0009515449999999426,
+            "cpu_seconds": 0.0011032120000000756,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2063,37 +2063,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.000783332999844788
+            "wall_seconds": 0.0008941830001276685
           },
           {
-            "cpu_seconds": 0.0011880670000001814,
+            "cpu_seconds": 0.0013771300000000597,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010971120000249357
+            "wall_seconds": 0.0012066929998582054
           },
           {
-            "cpu_seconds": 0.0006743329999998604,
+            "cpu_seconds": 0.00035055200000000397,
             "detail": "",
             "encoding_bytes": 289,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0006550309999511228
+            "wall_seconds": 0.0003264199999648554
           },
           {
-            "cpu_seconds": 0.0002611679999999783,
+            "cpu_seconds": 0.0002711939999999746,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023807600018699304
+            "wall_seconds": 0.0002540010000302573
           },
           {
-            "cpu_seconds": 0.0011890880000000603,
+            "cpu_seconds": 0.0014508389999998705,
             "detail": "",
             "encoding_bytes": 290,
             "obligation": "compatibility-reflexive",
@@ -2104,7 +2104,7 @@
               "u0": "0",
               "v0": "0"
             },
-            "wall_seconds": 0.0012898210000003019
+            "wall_seconds": 0.0015065039999626606
           }
         ],
         "reason": "compatibility-reflexive"
@@ -2140,7 +2140,7 @@
         "id": "asymmetric-mask",
         "queries": [
           {
-            "cpu_seconds": 0.0011571210000000942,
+            "cpu_seconds": 0.0010398680000001104,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2148,46 +2148,46 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.000975861000142686
+            "wall_seconds": 0.000892890999921292
           },
           {
-            "cpu_seconds": 0.001416795999999998,
+            "cpu_seconds": 0.0012594249999999807,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001328708999835726
+            "wall_seconds": 0.001168676999895979
           },
           {
-            "cpu_seconds": 0.00036327000000002663,
+            "cpu_seconds": 0.00045326399999989775,
             "detail": "",
             "encoding_bytes": 289,
             "obligation": "scale-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003339100001085171
+            "wall_seconds": 0.00042806300007214304
           },
           {
-            "cpu_seconds": 0.0002853149999999527,
+            "cpu_seconds": 0.00034418300000016444,
             "detail": "",
             "encoding_bytes": 320,
             "obligation": "weight-partition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002667600001586834
+            "wall_seconds": 0.0003253189997849404
           },
           {
-            "cpu_seconds": 0.0003421079999998966,
+            "cpu_seconds": 0.0002528859999999522,
             "detail": "",
             "encoding_bytes": 284,
             "obligation": "compatibility-reflexive",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003253480001603748
+            "wall_seconds": 0.00023242900010700396
           },
           {
-            "cpu_seconds": 0.00105858400000014,
+            "cpu_seconds": 0.0011977930000000026,
             "detail": "",
             "encoding_bytes": 330,
             "obligation": "compatibility-symmetric",
@@ -2198,7 +2198,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0011157599999478407
+            "wall_seconds": 0.0012644600001294748
           }
         ],
         "reason": "compatibility-symmetric"
@@ -2238,7 +2238,7 @@
         "id": "overlapping-partition",
         "queries": [
           {
-            "cpu_seconds": 0.0010251749999998783,
+            "cpu_seconds": 0.0012715930000000153,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2246,19 +2246,19 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008710239999345504
+            "wall_seconds": 0.001052321000088341
           },
           {
-            "cpu_seconds": 0.001188085999999977,
+            "cpu_seconds": 0.0012143769999999332,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011063659999308584
+            "wall_seconds": 0.0011241090001021803
           },
           {
-            "cpu_seconds": 0.0012229489999999732,
+            "cpu_seconds": 0.0011988549999999432,
             "detail": "",
             "encoding_bytes": 309,
             "obligation": "scale-partition",
@@ -2269,7 +2269,7 @@
               "u0": "0",
               "v0": "0"
             },
-            "wall_seconds": 0.0012711530000615312
+            "wall_seconds": 0.0012479560000429046
           }
         ],
         "reason": "scale-partition"
@@ -2336,7 +2336,7 @@
         "id": "missing-partition-cell",
         "queries": [
           {
-            "cpu_seconds": 0.0011561090000000718,
+            "cpu_seconds": 0.0012503910000001284,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2344,19 +2344,19 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009032920002027822
+            "wall_seconds": 0.001074555000059263
           },
           {
-            "cpu_seconds": 0.001592347000000105,
+            "cpu_seconds": 0.0014045700000000494,
             "detail": "",
             "encoding_bytes": 185,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00129114300011679
+            "wall_seconds": 0.0012515810001332284
           },
           {
-            "cpu_seconds": 0.001159133999999895,
+            "cpu_seconds": 0.001522836999999999,
             "detail": "",
             "encoding_bytes": 293,
             "obligation": "scale-partition",
@@ -2367,7 +2367,7 @@
               "u0": "1",
               "v0": "0"
             },
-            "wall_seconds": 0.0013013889999911044
+            "wall_seconds": 0.0016389129998515273
           }
         ],
         "reason": "scale-partition"
@@ -2375,7 +2375,7 @@
       "oracles": []
     }
   ],
-  "cpu_seconds": 0.5960745599999999,
+  "cpu_seconds": 0.7150985089999999,
   "errors": [],
   "limits": {
     "address_space_bytes": 2147483648,
@@ -2386,7 +2386,7 @@
   },
   "oracle_checks": 124,
   "oracle_obligations": 1917,
-  "peak_rss_kib": 121648,
+  "peak_rss_kib": 121772,
   "query_count": 289,
   "records": [
     {
@@ -2477,7 +2477,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.003996351999999981,
+            "cpu_seconds": 0.004692054000000001,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2485,70 +2485,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0025322409999262163
+            "wall_seconds": 0.002275560000043697
           },
           {
-            "cpu_seconds": 0.00206874600000001,
+            "cpu_seconds": 0.0017873399999999706,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0018167999999150197
+            "wall_seconds": 0.001579883999966114
           },
           {
-            "cpu_seconds": 0.0009327869999999905,
+            "cpu_seconds": 0.0018949409999999833,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008681290000822628
+            "wall_seconds": 0.0018764499998269457
           },
           {
-            "cpu_seconds": 0.0005089570000000321,
+            "cpu_seconds": 0.0015488150000000367,
             "detail": "",
             "encoding_bytes": 835,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004060080000272137
+            "wall_seconds": 0.0013385320000907086
           },
           {
-            "cpu_seconds": 0.0005865119999999835,
+            "cpu_seconds": 0.0006587909999999919,
             "detail": "",
             "encoding_bytes": 914,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005640440001570823
+            "wall_seconds": 0.0006269119999160466
           },
           {
-            "cpu_seconds": 0.0006045590000000045,
+            "cpu_seconds": 0.0005962469999999942,
             "detail": "",
             "encoding_bytes": 922,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004971339999428892
+            "wall_seconds": 0.0005696860000625747
           },
           {
-            "cpu_seconds": 0.000503548999999992,
+            "cpu_seconds": 0.0005259329999999784,
             "detail": "",
             "encoding_bytes": 912,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00047830599987719324
+            "wall_seconds": 0.0005014030000438652
           },
           {
-            "cpu_seconds": 0.00035303500000000154,
+            "cpu_seconds": 0.0003757790000000205,
             "detail": "",
             "encoding_bytes": 969,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00032681999982742127
+            "wall_seconds": 0.0003509279999889259
           }
         ],
         "terms": 2
@@ -2717,7 +2717,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0030189389999999983,
+            "cpu_seconds": 0.001749213999999999,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -2725,37 +2725,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.003078118000075847
+            "wall_seconds": 0.0009466520000387391
           },
           {
-            "cpu_seconds": 0.002209744999999985,
+            "cpu_seconds": 0.0014433180000000267,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013068159998965712
+            "wall_seconds": 0.001357429000108823
           },
           {
-            "cpu_seconds": 0.0007944020000000274,
+            "cpu_seconds": 0.0010845539999999598,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007407790001252579
+            "wall_seconds": 0.0009880149998480192
           },
           {
-            "cpu_seconds": 0.0006347529999999879,
+            "cpu_seconds": 0.0005066650000000172,
             "detail": "",
             "encoding_bytes": 835,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005598479999662231
+            "wall_seconds": 0.0004237670000293292
           },
           {
-            "cpu_seconds": 0.0008710160000000022,
+            "cpu_seconds": 0.0008561040000000242,
             "detail": "",
             "encoding_bytes": 914,
             "obligation": "value",
@@ -2771,28 +2771,28 @@
               "x0": "1",
               "x1": "1"
             },
-            "wall_seconds": 0.0009459960001549916
+            "wall_seconds": 0.0011894679998931679
           },
           {
-            "cpu_seconds": 0.0005823050000000052,
+            "cpu_seconds": 0.000891235999999962,
             "detail": "",
             "encoding_bytes": 922,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004542100000435312
+            "wall_seconds": 0.0005039970001234906
           },
           {
-            "cpu_seconds": 0.0005603839999999694,
+            "cpu_seconds": 0.0005452120000000171,
             "detail": "",
             "encoding_bytes": 912,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000536952999937057
+            "wall_seconds": 0.0005213729998558847
           },
           {
-            "cpu_seconds": 0.0007041670000000333,
+            "cpu_seconds": 0.0010001490000000057,
             "detail": "",
             "encoding_bytes": 965,
             "obligation": "term-order",
@@ -2808,7 +2808,7 @@
               "x0": "1",
               "x1": "1"
             },
-            "wall_seconds": 0.0007673990000967024
+            "wall_seconds": 0.0010673240001324302
           }
         ],
         "terms": 2
@@ -3089,7 +3089,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0020341850000000217,
+            "cpu_seconds": 0.004430253999999967,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -3097,37 +3097,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009437029998480284
+            "wall_seconds": 0.0016383929998937674
           },
           {
-            "cpu_seconds": 0.0011593329999999846,
+            "cpu_seconds": 0.001523688000000023,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010889899999710906
+            "wall_seconds": 0.0013228980001258606
           },
           {
-            "cpu_seconds": 0.0009083609999999687,
+            "cpu_seconds": 0.0011345890000000192,
             "detail": "",
             "encoding_bytes": 482,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008521659999587428
+            "wall_seconds": 0.0010775000000649015
           },
           {
-            "cpu_seconds": 0.0005708190000000002,
+            "cpu_seconds": 0.0007111979999999685,
             "detail": "",
             "encoding_bytes": 1156,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004802689998086862
+            "wall_seconds": 0.000578419000021313
           },
           {
-            "cpu_seconds": 0.0011066950000000464,
+            "cpu_seconds": 0.002145053000000008,
             "detail": "",
             "encoding_bytes": 1235,
             "obligation": "value",
@@ -3145,28 +3145,28 @@
               "x1": "1/4",
               "x2": "1/4"
             },
-            "wall_seconds": 0.0013405669999428937
+            "wall_seconds": 0.0023429509999459697
           },
           {
-            "cpu_seconds": 0.0015775059999999508,
+            "cpu_seconds": 0.002044032000000029,
             "detail": "",
             "encoding_bytes": 1243,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001291444000116826
+            "wall_seconds": 0.0018085980000250856
           },
           {
-            "cpu_seconds": 0.0008682010000000129,
+            "cpu_seconds": 0.0014282359999999716,
             "detail": "",
             "encoding_bytes": 1233,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000835771000083696
+            "wall_seconds": 0.0008417950000421115
           },
           {
-            "cpu_seconds": 0.0009096030000000366,
+            "cpu_seconds": 0.0010165830000000153,
             "detail": "",
             "encoding_bytes": 1329,
             "obligation": "term-order",
@@ -3184,7 +3184,7 @@
               "x1": "1",
               "x2": "1"
             },
-            "wall_seconds": 0.000976621999825511
+            "wall_seconds": 0.001097017999882155
           }
         ],
         "terms": 3
@@ -3463,7 +3463,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.003746019999999961,
+            "cpu_seconds": 0.0030116030000000293,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -3471,37 +3471,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0011593350000111968
+            "wall_seconds": 0.0010230980001324497
           },
           {
-            "cpu_seconds": 0.0014458689999999885,
+            "cpu_seconds": 0.0013873449999999843,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0013778219999949215
+            "wall_seconds": 0.0013163589999294345
           },
           {
-            "cpu_seconds": 0.0008306160000000062,
+            "cpu_seconds": 0.0010791660000000203,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007875490000515128
+            "wall_seconds": 0.001037218999954348
           },
           {
-            "cpu_seconds": 0.0004374200000000217,
+            "cpu_seconds": 0.0005404149999999608,
             "detail": "",
             "encoding_bytes": 838,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003647460000593128
+            "wall_seconds": 0.0004674630001773039
           },
           {
-            "cpu_seconds": 0.0008051669999999955,
+            "cpu_seconds": 0.0008640560000000019,
             "detail": "",
             "encoding_bytes": 917,
             "obligation": "value",
@@ -3517,19 +3517,19 @@
               "x0": "1",
               "x1": "1"
             },
-            "wall_seconds": 0.0008754509999562288
+            "wall_seconds": 0.0009526320000077249
           },
           {
-            "cpu_seconds": 0.0006004530000000008,
+            "cpu_seconds": 0.0008018330000000295,
             "detail": "",
             "encoding_bytes": 925,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004850259999784612
+            "wall_seconds": 0.0006580090000625205
           },
           {
-            "cpu_seconds": 0.0006518389999999874,
+            "cpu_seconds": 0.0007730109999999901,
             "detail": "",
             "encoding_bytes": 915,
             "obligation": "stored-support",
@@ -3545,10 +3545,10 @@
               "x0": "0",
               "x1": "0"
             },
-            "wall_seconds": 0.0007392359998448228
+            "wall_seconds": 0.0008617650000815047
           },
           {
-            "cpu_seconds": 0.0008837640000000091,
+            "cpu_seconds": 0.0009251670000000045,
             "detail": "",
             "encoding_bytes": 968,
             "obligation": "term-order",
@@ -3564,7 +3564,7 @@
               "x0": "1",
               "x1": "1"
             },
-            "wall_seconds": 0.0008316449998346798
+            "wall_seconds": 0.0008640089999971678
           }
         ],
         "terms": 2
@@ -3927,7 +3927,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0023968139999999694,
+            "cpu_seconds": 0.0021936250000000324,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -3935,37 +3935,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.001197022000042125
+            "wall_seconds": 0.001080063000017617
           },
           {
-            "cpu_seconds": 0.0011535550000000283,
+            "cpu_seconds": 0.001478069999999998,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010841629998594726
+            "wall_seconds": 0.001406724000162285
           },
           {
-            "cpu_seconds": 0.0009099029999999897,
+            "cpu_seconds": 0.0009012210000000076,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008623510000234091
+            "wall_seconds": 0.0008496769999055687
           },
           {
-            "cpu_seconds": 0.0006512479999999932,
+            "cpu_seconds": 0.0005968889999999893,
             "detail": "",
             "encoding_bytes": 1297,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005702639998617087
+            "wall_seconds": 0.0005083340001874603
           },
           {
-            "cpu_seconds": 0.000772368999999995,
+            "cpu_seconds": 0.0008807809999999971,
             "detail": "",
             "encoding_bytes": 1376,
             "obligation": "value",
@@ -3985,10 +3985,10 @@
               "x2": "1",
               "x3": "1"
             },
-            "wall_seconds": 0.0009144090001882432
+            "wall_seconds": 0.0011178899999322311
           },
           {
-            "cpu_seconds": 0.0011203060000000153,
+            "cpu_seconds": 0.0016697740000000127,
             "detail": "",
             "encoding_bytes": 1384,
             "obligation": "zero-support",
@@ -4008,19 +4008,19 @@
               "x2": "1/2",
               "x3": "-1/2"
             },
-            "wall_seconds": 0.0011062260000471724
+            "wall_seconds": 0.0014264829999319772
           },
           {
-            "cpu_seconds": 0.0006991989999999837,
+            "cpu_seconds": 0.0006363669999999155,
             "detail": "",
             "encoding_bytes": 1374,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004888719997779845
+            "wall_seconds": 0.0006197109998993255
           },
           {
-            "cpu_seconds": 0.0008153630000000134,
+            "cpu_seconds": 0.0009088930000000772,
             "detail": "",
             "encoding_bytes": 1548,
             "obligation": "term-order",
@@ -4040,7 +4040,7 @@
               "x2": "1",
               "x3": "1"
             },
-            "wall_seconds": 0.0008657759999550763
+            "wall_seconds": 0.0008717810001144244
           }
         ],
         "terms": 4
@@ -4407,7 +4407,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0037000910000000165,
+            "cpu_seconds": 0.002917002000000002,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -4415,64 +4415,64 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009257049998723232
+            "wall_seconds": 0.001095146000125169
           },
           {
-            "cpu_seconds": 0.0012246409999999708,
+            "cpu_seconds": 0.0016223949999999432,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011277290000180074
+            "wall_seconds": 0.0015450920000148471
           },
           {
-            "cpu_seconds": 0.0009720659999999937,
+            "cpu_seconds": 0.0011505820000000666,
             "detail": "",
             "encoding_bytes": 536,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008782550000887568
+            "wall_seconds": 0.0013179509999190486
           },
           {
-            "cpu_seconds": 0.0005849900000000074,
+            "cpu_seconds": 0.0007730910000000035,
             "detail": "",
             "encoding_bytes": 1297,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00041783599999689613
+            "wall_seconds": 0.0004678029999922728
           },
           {
-            "cpu_seconds": 0.0007603600000000155,
+            "cpu_seconds": 0.0005197639999999781,
             "detail": "",
             "encoding_bytes": 1376,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007371540000349341
+            "wall_seconds": 0.0004936819998420106
           },
           {
-            "cpu_seconds": 0.0007824339999999985,
+            "cpu_seconds": 0.0010515449999999316,
             "detail": "",
             "encoding_bytes": 1384,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000755330999936632
+            "wall_seconds": 0.0010279050000008283
           },
           {
-            "cpu_seconds": 0.0007104960000000604,
+            "cpu_seconds": 0.0007697060000000366,
             "detail": "",
             "encoding_bytes": 1374,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0006753709999429702
+            "wall_seconds": 0.0007384799998817471
           },
           {
-            "cpu_seconds": 0.004195477999999975,
+            "cpu_seconds": 0.0008009220000000372,
             "detail": "",
             "encoding_bytes": 1552,
             "obligation": "term-order",
@@ -4492,7 +4492,7 @@
               "x2": "1",
               "x3": "1"
             },
-            "wall_seconds": 0.004269670999974551
+            "wall_seconds": 0.0008879639999577194
           }
         ],
         "terms": 4
@@ -4716,7 +4716,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0026476970000000044,
+            "cpu_seconds": 0.0029609569999999863,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -4724,64 +4724,64 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008436929999788845
+            "wall_seconds": 0.0011432280000462924
           },
           {
-            "cpu_seconds": 0.0016343399999999564,
+            "cpu_seconds": 0.001321997999999991,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0015720829999281705
+            "wall_seconds": 0.0012544149999484944
           },
           {
-            "cpu_seconds": 0.000816054000000066,
+            "cpu_seconds": 0.0010522560000000292,
             "detail": "",
             "encoding_bytes": 467,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007641530000910279
+            "wall_seconds": 0.0010100280001097417
           },
           {
-            "cpu_seconds": 0.0004613159999999894,
+            "cpu_seconds": 0.0006497569999999175,
             "detail": "",
             "encoding_bytes": 1141,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003795780000928062
+            "wall_seconds": 0.0005694659998880525
           },
           {
-            "cpu_seconds": 0.0004948860000000277,
+            "cpu_seconds": 0.0005112510000000459,
             "detail": "",
             "encoding_bytes": 1220,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00047143500000856875
+            "wall_seconds": 0.00048642100000506616
           },
           {
-            "cpu_seconds": 0.0004888869999999379,
+            "cpu_seconds": 0.0005655719999999587,
             "detail": "",
             "encoding_bytes": 1228,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00046270200004983053
+            "wall_seconds": 0.0005400610000378947
           },
           {
-            "cpu_seconds": 0.0005005740000000314,
+            "cpu_seconds": 0.0005730630000000403,
             "detail": "",
             "encoding_bytes": 1218,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000476153000136037
+            "wall_seconds": 0.00046751299987590755
           },
           {
-            "cpu_seconds": 0.0008771140000000122,
+            "cpu_seconds": 0.0007395709999999944,
             "detail": "",
             "encoding_bytes": 1310,
             "obligation": "term-order",
@@ -4799,7 +4799,7 @@
               "x1": "1",
               "x2": "1"
             },
-            "wall_seconds": 0.0009585549998973875
+            "wall_seconds": 0.000815184999964913
           }
         ],
         "terms": 3
@@ -5015,7 +5015,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0021906769999999742,
+            "cpu_seconds": 0.002563184999999968,
             "detail": "",
             "encoding_bytes": 153,
             "obligation": "precondition",
@@ -5023,64 +5023,64 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007886810001309641
+            "wall_seconds": 0.0009631369998714945
           },
           {
-            "cpu_seconds": 0.0008068800000000653,
+            "cpu_seconds": 0.0011586450000000692,
             "detail": "",
             "encoding_bytes": 194,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000741380000135905
+            "wall_seconds": 0.0010956169999190024
           },
           {
-            "cpu_seconds": 0.0009337789999999124,
+            "cpu_seconds": 0.0008717469999999228,
             "detail": "",
             "encoding_bytes": 474,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008935169998949277
+            "wall_seconds": 0.0008202129999972385
           },
           {
-            "cpu_seconds": 0.0005962760000000067,
+            "cpu_seconds": 0.0004696990000000456,
             "detail": "",
             "encoding_bytes": 1148,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00041235799994865374
+            "wall_seconds": 0.00038735299995096284
           },
           {
-            "cpu_seconds": 0.000548025000000063,
+            "cpu_seconds": 0.0007125510000000057,
             "detail": "",
             "encoding_bytes": 1227,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005245549998562637
+            "wall_seconds": 0.0006915189999290305
           },
           {
-            "cpu_seconds": 0.0005189119999999825,
+            "cpu_seconds": 0.0006247000000000336,
             "detail": "",
             "encoding_bytes": 1235,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004925069999899279
+            "wall_seconds": 0.0005967160000182048
           },
           {
-            "cpu_seconds": 0.0005205839999999906,
+            "cpu_seconds": 0.0005040499999999781,
             "detail": "",
             "encoding_bytes": 1225,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004964629999903991
+            "wall_seconds": 0.00047723700004098646
           },
           {
-            "cpu_seconds": 0.000689064000000017,
+            "cpu_seconds": 0.00122912899999994,
             "detail": "",
             "encoding_bytes": 1317,
             "obligation": "term-order",
@@ -5098,7 +5098,7 @@
               "x1": "1",
               "x2": "1"
             },
-            "wall_seconds": 0.000796402000105445
+            "wall_seconds": 0.0013112409999394004
           }
         ],
         "terms": 3
@@ -5334,7 +5334,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0021457810000000688,
+            "cpu_seconds": 0.0024406630000000096,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -5342,37 +5342,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008683600001404557
+            "wall_seconds": 0.0010212449999471573
           },
           {
-            "cpu_seconds": 0.0011286480000000099,
+            "cpu_seconds": 0.0019025420000000626,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001056070999993608
+            "wall_seconds": 0.0018345959999805928
           },
           {
-            "cpu_seconds": 0.001200013999999916,
+            "cpu_seconds": 0.0011558609999999803,
             "detail": "",
             "encoding_bytes": 475,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0011469670000678889
+            "wall_seconds": 0.0011015350000889157
           },
           {
-            "cpu_seconds": 0.000535025999999994,
+            "cpu_seconds": 0.0006640980000000019,
             "detail": "",
             "encoding_bytes": 1149,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00044819100003223866
+            "wall_seconds": 0.0005680029998984537
           },
           {
-            "cpu_seconds": 0.0010443430000000031,
+            "cpu_seconds": 0.0012596649999999654,
             "detail": "",
             "encoding_bytes": 1228,
             "obligation": "value",
@@ -5390,10 +5390,10 @@
               "x1": "-1",
               "x2": "0"
             },
-            "wall_seconds": 0.0011369720000402594
+            "wall_seconds": 0.001334745999884035
           },
           {
-            "cpu_seconds": 0.0010379730000000809,
+            "cpu_seconds": 0.0010810989999999743,
             "detail": "",
             "encoding_bytes": 1236,
             "obligation": "zero-support",
@@ -5411,10 +5411,10 @@
               "x1": "-1",
               "x2": "0"
             },
-            "wall_seconds": 0.0010033519999979035
+            "wall_seconds": 0.0010309199999483099
           },
           {
-            "cpu_seconds": 0.0011166899999999202,
+            "cpu_seconds": 0.0011736469999999999,
             "detail": "",
             "encoding_bytes": 1226,
             "obligation": "stored-support",
@@ -5432,10 +5432,10 @@
               "x1": "0",
               "x2": "0"
             },
-            "wall_seconds": 0.0010922249998657207
+            "wall_seconds": 0.0011386409998976887
           },
           {
-            "cpu_seconds": 0.0010644130000000418,
+            "cpu_seconds": 0.001138555000000041,
             "detail": "",
             "encoding_bytes": 1318,
             "obligation": "term-order",
@@ -5453,7 +5453,7 @@
               "x1": "0",
               "x2": "0"
             },
-            "wall_seconds": 0.0010216190000846836
+            "wall_seconds": 0.00136101500015684
           }
         ],
         "terms": 3
@@ -5850,7 +5850,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0018296110000000088,
+            "cpu_seconds": 0.0031088080000000184,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -5858,55 +5858,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008539580001070135
+            "wall_seconds": 0.0009233970001787384
           },
           {
-            "cpu_seconds": 0.001119084000000048,
+            "cpu_seconds": 0.0015457210000000554,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010547089998453885
+            "wall_seconds": 0.0014791130001867714
           },
           {
-            "cpu_seconds": 0.0007748119999999581,
+            "cpu_seconds": 0.0008590679999999074,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007296320000023115
+            "wall_seconds": 0.0008144529999754013
           },
           {
-            "cpu_seconds": 0.00048362899999998543,
+            "cpu_seconds": 0.0006278050000000368,
             "detail": "",
             "encoding_bytes": 838,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00038973400000941183
+            "wall_seconds": 0.0005562959997860162
           },
           {
-            "cpu_seconds": 0.00042611400000003297,
+            "cpu_seconds": 0.0004894380000000087,
             "detail": "",
             "encoding_bytes": 917,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00040224199983640574
+            "wall_seconds": 0.00046448799980680633
           },
           {
-            "cpu_seconds": 0.0007591579999999265,
+            "cpu_seconds": 0.000541466000000046,
             "detail": "",
             "encoding_bytes": 925,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007382660000985197
+            "wall_seconds": 0.0005182290001357615
           },
           {
-            "cpu_seconds": 0.0008454880000000609,
+            "cpu_seconds": 0.0010929169999999155,
             "detail": "",
             "encoding_bytes": 915,
             "obligation": "stored-support",
@@ -5922,16 +5922,16 @@
               "x0": "0",
               "x1": "0"
             },
-            "wall_seconds": 0.0007979750000686181
+            "wall_seconds": 0.001202125999952841
           },
           {
-            "cpu_seconds": 0.0004321419999999687,
+            "cpu_seconds": 0.00047465600000007324,
             "detail": "",
             "encoding_bytes": 972,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003130190000319999
+            "wall_seconds": 0.00031575499997416046
           }
         ],
         "terms": 2
@@ -6171,7 +6171,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0019281669999999806,
+            "cpu_seconds": 0.0019264379999999193,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -6179,55 +6179,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008000379998520657
+            "wall_seconds": 0.0008100979998744151
           },
           {
-            "cpu_seconds": 0.0012320920000000735,
+            "cpu_seconds": 0.0014519110000000834,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001167887999827144
+            "wall_seconds": 0.001386393000075259
           },
           {
-            "cpu_seconds": 0.0007851079999999788,
+            "cpu_seconds": 0.000841291999999938,
             "detail": "",
             "encoding_bytes": 467,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007361820000824082
+            "wall_seconds": 0.0007968070001425076
           },
           {
-            "cpu_seconds": 0.0004721719999999374,
+            "cpu_seconds": 0.00047682999999998366,
             "detail": "",
             "encoding_bytes": 1041,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000398717000052784
+            "wall_seconds": 0.00039735700011078734
           },
           {
-            "cpu_seconds": 0.00044151600000008617,
+            "cpu_seconds": 0.00044016499999999237,
             "detail": "",
             "encoding_bytes": 1120,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004178149999916059
+            "wall_seconds": 0.0004143929998008389
           },
           {
-            "cpu_seconds": 0.0005269739999999024,
+            "cpu_seconds": 0.0004989330000000347,
             "detail": "",
             "encoding_bytes": 1128,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005036840000229859
+            "wall_seconds": 0.00047470399999838264
           },
           {
-            "cpu_seconds": 0.000743265000000104,
+            "cpu_seconds": 0.0008138309999999871,
             "detail": "",
             "encoding_bytes": 1118,
             "obligation": "stored-support",
@@ -6245,10 +6245,10 @@
               "x1": "0",
               "x2": "0"
             },
-            "wall_seconds": 0.0008213690000502538
+            "wall_seconds": 0.0009295270001530298
           },
           {
-            "cpu_seconds": 0.0007921179999998973,
+            "cpu_seconds": 0.0008906960000000241,
             "detail": "",
             "encoding_bytes": 1214,
             "obligation": "term-order",
@@ -6266,7 +6266,7 @@
               "x1": "0",
               "x2": "1"
             },
-            "wall_seconds": 0.0007562319999578904
+            "wall_seconds": 0.0008271230001355434
           }
         ],
         "terms": 3
@@ -6543,7 +6543,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0029708570000001044,
+            "cpu_seconds": 0.003917782000000036,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -6551,28 +6551,28 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008325559999775578
+            "wall_seconds": 0.0010824969999703171
           },
           {
-            "cpu_seconds": 0.0010169019999999307,
+            "cpu_seconds": 0.0013856119999999805,
             "detail": "",
             "encoding_bytes": 201,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009513439999864204
+            "wall_seconds": 0.0013572500001828303
           },
           {
-            "cpu_seconds": 0.0003716230000000431,
+            "cpu_seconds": 0.000424882999999987,
             "detail": "",
             "encoding_bytes": 261,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00034138099999836413
+            "wall_seconds": 0.00039454300008401333
           },
           {
-            "cpu_seconds": 0.0007303359999999426,
+            "cpu_seconds": 0.001095120000000005,
             "detail": "",
             "encoding_bytes": 449,
             "obligation": "shape",
@@ -6584,10 +6584,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0007663270000648481
+            "wall_seconds": 0.000942977000022438
           },
           {
-            "cpu_seconds": 0.0009329869999999962,
+            "cpu_seconds": 0.0015405229999999603,
             "detail": "",
             "encoding_bytes": 534,
             "obligation": "value",
@@ -6599,10 +6599,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.000884234000068318
+            "wall_seconds": 0.0015175510000062786
           },
           {
-            "cpu_seconds": 0.0009566819999999865,
+            "cpu_seconds": 0.0010329470000000063,
             "detail": "",
             "encoding_bytes": 542,
             "obligation": "zero-support",
@@ -6614,10 +6614,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0009377339999900869
+            "wall_seconds": 0.0010123819999989792
           },
           {
-            "cpu_seconds": 0.0009099540000000461,
+            "cpu_seconds": 0.0011635819999999963,
             "detail": "",
             "encoding_bytes": 532,
             "obligation": "stored-support",
@@ -6629,10 +6629,10 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.000888048999968305
+            "wall_seconds": 0.001145461000078285
           },
           {
-            "cpu_seconds": 0.0008957410000000054,
+            "cpu_seconds": 0.001242139000000031,
             "detail": "",
             "encoding_bytes": 540,
             "obligation": "term-order",
@@ -6644,7 +6644,7 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0008780240000305639
+            "wall_seconds": 0.0012262929999451444
           }
         ],
         "terms": 0
@@ -6919,7 +6919,7 @@
         "id": "active-read-oob",
         "queries": [
           {
-            "cpu_seconds": 0.0010068869999999563,
+            "cpu_seconds": 0.003405639000000016,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -6927,19 +6927,19 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0009112939999340597
+            "wall_seconds": 0.0010638879998623452
           },
           {
-            "cpu_seconds": 0.0011320129999999873,
+            "cpu_seconds": 0.0015361469999999322,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010675579999315232
+            "wall_seconds": 0.0014670550001483207
           },
           {
-            "cpu_seconds": 0.0011014280000000154,
+            "cpu_seconds": 0.001284021000000024,
             "detail": "",
             "encoding_bytes": 410,
             "obligation": "active-read-bounds",
@@ -6951,7 +6951,7 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0011229409999486961
+            "wall_seconds": 0.0013287770000260934
           }
         ],
         "reason": "active read out of bounds"
@@ -7015,7 +7015,7 @@
         "id": "negative-dimension",
         "queries": [
           {
-            "cpu_seconds": 0.0010662860000000274,
+            "cpu_seconds": 0.001362077000000017,
             "detail": "",
             "encoding_bytes": 158,
             "obligation": "precondition",
@@ -7023,10 +7023,10 @@
             "values": {
               "n0": "-1"
             },
-            "wall_seconds": 0.0009034619999965798
+            "wall_seconds": 0.0010600730001897318
           },
           {
-            "cpu_seconds": 0.0009342190000000139,
+            "cpu_seconds": 0.0010530380000000061,
             "detail": "",
             "encoding_bytes": 199,
             "obligation": "nonnegative-dimensions",
@@ -7034,7 +7034,7 @@
             "values": {
               "n0": "-1"
             },
-            "wall_seconds": 0.0009061770001608238
+            "wall_seconds": 0.00102565199995297
           }
         ],
         "reason": "negative dimension"
@@ -7098,13 +7098,13 @@
         "id": "empty-precondition",
         "queries": [
           {
-            "cpu_seconds": 0.0009789649999999428,
+            "cpu_seconds": 0.0013469249999999988,
             "detail": "",
             "encoding_bytes": 169,
             "obligation": "precondition",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007703729997956543
+            "wall_seconds": 0.0008813439999357797
           }
         ],
         "reason": "precondition feasibility"
@@ -7286,7 +7286,7 @@
         "id": "unstored-nonzero",
         "queries": [
           {
-            "cpu_seconds": 0.0010643230000000337,
+            "cpu_seconds": 0.001370490000000002,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -7294,28 +7294,28 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008397480000894575
+            "wall_seconds": 0.0011403339999560558
           },
           {
-            "cpu_seconds": 0.0011183830000000006,
+            "cpu_seconds": 0.0012954279999999319,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010567019999143668
+            "wall_seconds": 0.0012269040000774112
           },
           {
-            "cpu_seconds": 0.0007884219999999553,
+            "cpu_seconds": 0.0010006089999999856,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007427809998716839
+            "wall_seconds": 0.0009581890001300053
           },
           {
-            "cpu_seconds": 0.0008147620000000799,
+            "cpu_seconds": 0.0009927280000000538,
             "detail": "",
             "encoding_bytes": 860,
             "obligation": "output-storage-consistency",
@@ -7331,7 +7331,7 @@
               "x0": "1",
               "x1": "1"
             },
-            "wall_seconds": 0.000834599999961938
+            "wall_seconds": 0.0010193919999892387
           }
         ],
         "reason": "unstored nonzero output"
@@ -7446,7 +7446,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0009663369999999283,
+            "cpu_seconds": 0.0010473789999999594,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -7454,64 +7454,64 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007928369998353446
+            "wall_seconds": 0.0008371080000415532
           },
           {
-            "cpu_seconds": 0.001126163999999985,
+            "cpu_seconds": 0.0012624690000000438,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010575030000836705
+            "wall_seconds": 0.0011953859998357075
           },
           {
-            "cpu_seconds": 0.0007830950000000669,
+            "cpu_seconds": 0.0008271210000000417,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007407289999719069
+            "wall_seconds": 0.000783397000077457
           },
           {
-            "cpu_seconds": 0.00043677899999994274,
+            "cpu_seconds": 0.0009351619999999894,
             "detail": "",
             "encoding_bytes": 906,
             "obligation": "output-storage-consistency",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003707749999648513
+            "wall_seconds": 0.000860833999922761
           },
           {
-            "cpu_seconds": 0.0002719939999999976,
+            "cpu_seconds": 0.0002992349999999533,
             "detail": "",
             "encoding_bytes": 875,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002487929998551408
+            "wall_seconds": 0.00027209900008529075
           },
           {
-            "cpu_seconds": 0.00045433599999999963,
+            "cpu_seconds": 0.0005816560000000415,
             "detail": "",
             "encoding_bytes": 954,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00043519200016817194
+            "wall_seconds": 0.0005606120000720693
           },
           {
-            "cpu_seconds": 0.000455037000000047,
+            "cpu_seconds": 0.000815854999999921,
             "detail": "",
             "encoding_bytes": 962,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004315060000408266
+            "wall_seconds": 0.000791750000189495
           },
           {
-            "cpu_seconds": 0.0006661700000000215,
+            "cpu_seconds": 0.0006751850000000781,
             "detail": "",
             "encoding_bytes": 952,
             "obligation": "stored-support",
@@ -7527,10 +7527,10 @@
               "x0": "0",
               "x1": "0"
             },
-            "wall_seconds": 0.0007333080000080372
+            "wall_seconds": 0.0007444089999353309
           },
           {
-            "cpu_seconds": 0.0008417219999999892,
+            "cpu_seconds": 0.0008048579999999639,
             "detail": "",
             "encoding_bytes": 960,
             "obligation": "term-order",
@@ -7546,7 +7546,7 @@
               "x0": "1",
               "x1": "1"
             },
-            "wall_seconds": 0.0007941290000417212
+            "wall_seconds": 0.0007728520001819561
           }
         ],
         "terms": 2
@@ -7827,7 +7827,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0024579040000000107,
+            "cpu_seconds": 0.0017677310000000501,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -7835,37 +7835,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.000825306000024284
+            "wall_seconds": 0.0010477650000666472
           },
           {
-            "cpu_seconds": 0.0011013479999999465,
+            "cpu_seconds": 0.001300937000000002,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001038163999965036
+            "wall_seconds": 0.0012084259999483038
           },
           {
-            "cpu_seconds": 0.0008943900000000227,
+            "cpu_seconds": 0.0009965129999999212,
             "detail": "",
             "encoding_bytes": 478,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0008396769999308162
+            "wall_seconds": 0.0009266130000469275
           },
           {
-            "cpu_seconds": 0.0005003839999999649,
+            "cpu_seconds": 0.0006508190000000802,
             "detail": "",
             "encoding_bytes": 1152,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004139300001497759
+            "wall_seconds": 0.0005502669998804777
           },
           {
-            "cpu_seconds": 0.0008948300000000131,
+            "cpu_seconds": 0.0009723170000000003,
             "detail": "",
             "encoding_bytes": 1231,
             "obligation": "value",
@@ -7883,28 +7883,28 @@
               "x1": "1/4",
               "x2": "1/4"
             },
-            "wall_seconds": 0.001013207000141847
+            "wall_seconds": 0.0010930519999874377
           },
           {
-            "cpu_seconds": 0.0011381830000000148,
+            "cpu_seconds": 0.001327224999999932,
             "detail": "",
             "encoding_bytes": 1239,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0009717950001686404
+            "wall_seconds": 0.0011548760001005576
           },
           {
-            "cpu_seconds": 0.0008035849999999956,
+            "cpu_seconds": 0.0011781339999999974,
             "detail": "",
             "encoding_bytes": 1229,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007421210000302381
+            "wall_seconds": 0.0011402930001622735
           },
           {
-            "cpu_seconds": 0.0008198390000000444,
+            "cpu_seconds": 0.00089742600000009,
             "detail": "",
             "encoding_bytes": 1325,
             "obligation": "term-order",
@@ -7922,7 +7922,7 @@
               "x1": "1",
               "x2": "1"
             },
-            "wall_seconds": 0.0008883600000899605
+            "wall_seconds": 0.0009638879998874472
           }
         ],
         "terms": 3
@@ -8177,7 +8177,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0033889489999999745,
+            "cpu_seconds": 0.0038558189999999826,
             "detail": "",
             "encoding_bytes": 193,
             "obligation": "precondition",
@@ -8186,70 +8186,70 @@
               "n0": "0",
               "n1": "0"
             },
-            "wall_seconds": 0.000920618000009199
+            "wall_seconds": 0.0011484060000839236
           },
           {
-            "cpu_seconds": 0.0010517540000000158,
+            "cpu_seconds": 0.0013652819999999677,
             "detail": "",
             "encoding_bytes": 261,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010234619999209826
+            "wall_seconds": 0.001281385000083901
           },
           {
-            "cpu_seconds": 0.0008385869999999462,
+            "cpu_seconds": 0.0010347899999999521,
             "detail": "",
             "encoding_bytes": 565,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007935779999570514
+            "wall_seconds": 0.0009283250001317356
           },
           {
-            "cpu_seconds": 0.00044788600000000844,
+            "cpu_seconds": 0.0007581990000000705,
             "detail": "",
             "encoding_bytes": 906,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00036547800004882447
+            "wall_seconds": 0.0006736120001278323
           },
           {
-            "cpu_seconds": 0.00046730400000005723,
+            "cpu_seconds": 0.000629997999999965,
             "detail": "",
             "encoding_bytes": 1049,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00044553700013238995
+            "wall_seconds": 0.0006027560000347876
           },
           {
-            "cpu_seconds": 0.0004722129999999991,
+            "cpu_seconds": 0.0004972100000000257,
             "detail": "",
             "encoding_bytes": 1057,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00044692899996334745
+            "wall_seconds": 0.0004715289999239758
           },
           {
-            "cpu_seconds": 0.0004465040000000142,
+            "cpu_seconds": 0.0005254319999999923,
             "detail": "",
             "encoding_bytes": 1047,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004227320000609325
+            "wall_seconds": 0.0005020250000598026
           },
           {
-            "cpu_seconds": 0.0003858329999999466,
+            "cpu_seconds": 0.00034575500000000314,
             "detail": "",
             "encoding_bytes": 1120,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003381960000297113
+            "wall_seconds": 0.0003172869999161776
           }
         ],
         "terms": 2
@@ -8602,7 +8602,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.003941320999999998,
+            "cpu_seconds": 0.0033141829999999706,
             "detail": "",
             "encoding_bytes": 153,
             "obligation": "precondition",
@@ -8610,70 +8610,70 @@
             "values": {
               "n0": "0"
             },
-            "wall_seconds": 0.0008332170000358019
+            "wall_seconds": 0.001304610999795841
           },
           {
-            "cpu_seconds": 0.0008172650000000115,
+            "cpu_seconds": 0.0011761510000000142,
             "detail": "",
             "encoding_bytes": 194,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007363219999660942
+            "wall_seconds": 0.0009676639999725012
           },
           {
-            "cpu_seconds": 0.001375314999999988,
+            "cpu_seconds": 0.000782845000000032,
             "detail": "",
             "encoding_bytes": 397,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001339875999974538
+            "wall_seconds": 0.0007434670001202903
           },
           {
-            "cpu_seconds": 0.0004597440000000397,
+            "cpu_seconds": 0.0004887980000000125,
             "detail": "",
             "encoding_bytes": 834,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00038271299990810803
+            "wall_seconds": 0.00037401200006570434
           },
           {
-            "cpu_seconds": 0.00043635799999997005,
+            "cpu_seconds": 0.0004725629999999814,
             "detail": "",
             "encoding_bytes": 913,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00041362900014974
+            "wall_seconds": 0.00044947500009584473
           },
           {
-            "cpu_seconds": 0.0004025290000000403,
+            "cpu_seconds": 0.0004566499999999474,
             "detail": "",
             "encoding_bytes": 921,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003789470001720474
+            "wall_seconds": 0.0004314180000619672
           },
           {
-            "cpu_seconds": 0.0004125830000000219,
+            "cpu_seconds": 0.00039806200000003233,
             "detail": "",
             "encoding_bytes": 911,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003907850000359758
+            "wall_seconds": 0.0003747029998066864
           },
           {
-            "cpu_seconds": 0.0003737860000000426,
+            "cpu_seconds": 0.0007613730000000096,
             "detail": "",
             "encoding_bytes": 964,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003712149998591485
+            "wall_seconds": 0.000741414000003715
           }
         ],
         "terms": 2
@@ -8796,7 +8796,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.001042109999999985,
+            "cpu_seconds": 0.0010468980000000183,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -8804,70 +8804,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008793259999038128
+            "wall_seconds": 0.000993653000023187
           },
           {
-            "cpu_seconds": 0.00041805100000003037,
+            "cpu_seconds": 0.0006331929999999764,
             "detail": "",
             "encoding_bytes": 169,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00035266800000499643
+            "wall_seconds": 0.000568134000104692
           },
           {
-            "cpu_seconds": 0.0002482589999999174,
+            "cpu_seconds": 0.00033822299999997085,
             "detail": "",
             "encoding_bytes": 314,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00021579300005214463
+            "wall_seconds": 0.0003067210000153864
           },
           {
-            "cpu_seconds": 0.0003015790000000518,
+            "cpu_seconds": 0.00037642999999998317,
             "detail": "",
             "encoding_bytes": 825,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000245636999807175
+            "wall_seconds": 0.00030862399989928235
           },
           {
-            "cpu_seconds": 0.00041677900000003376,
+            "cpu_seconds": 0.00041208400000003476,
             "detail": "",
             "encoding_bytes": 862,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00039913799992064014
+            "wall_seconds": 0.0003900159999830066
           },
           {
-            "cpu_seconds": 0.0007522189999999984,
+            "cpu_seconds": 0.0004492579999999524,
             "detail": "",
             "encoding_bytes": 870,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0006839139998646715
+            "wall_seconds": 0.00042633000020941836
           },
           {
-            "cpu_seconds": 0.0005541739999999074,
+            "cpu_seconds": 0.0004414370000001,
             "detail": "",
             "encoding_bytes": 860,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005293419999361504
+            "wall_seconds": 0.00039465299983021396
           },
           {
-            "cpu_seconds": 0.00031086200000007835,
+            "cpu_seconds": 0.0004997740000000084,
             "detail": "",
             "encoding_bytes": 912,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00028516600013972493
+            "wall_seconds": 0.0004778290001468122
           }
         ],
         "terms": 2
@@ -9024,7 +9024,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.001116730999999982,
+            "cpu_seconds": 0.0011626009999999853,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -9032,70 +9032,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007610689999637543
+            "wall_seconds": 0.0008037669999794161
           },
           {
-            "cpu_seconds": 0.0011512820000000312,
+            "cpu_seconds": 0.0014735329999999713,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010865460001241445
+            "wall_seconds": 0.0014077950002047146
           },
           {
-            "cpu_seconds": 0.0008122369999999934,
+            "cpu_seconds": 0.0008508369999999932,
             "detail": "",
             "encoding_bytes": 468,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007670879999750468
+            "wall_seconds": 0.0008036980000269978
           },
           {
-            "cpu_seconds": 0.0005253709999999412,
+            "cpu_seconds": 0.000558751000000024,
             "detail": "",
             "encoding_bytes": 1142,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00045041400016998523
+            "wall_seconds": 0.00047756699996170937
           },
           {
-            "cpu_seconds": 0.0005022770000000509,
+            "cpu_seconds": 0.0005222879999999819,
             "detail": "",
             "encoding_bytes": 1221,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.000466106999965632
+            "wall_seconds": 0.0004959860000326444
           },
           {
-            "cpu_seconds": 0.0005289269999999568,
+            "cpu_seconds": 0.00048783600000001925,
             "detail": "",
             "encoding_bytes": 1229,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0005039239999860001
+            "wall_seconds": 0.0004634260001239454
           },
           {
-            "cpu_seconds": 0.00048517100000000646,
+            "cpu_seconds": 0.0006162769999999984,
             "detail": "",
             "encoding_bytes": 1219,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004607900000337395
+            "wall_seconds": 0.0005675529998825368
           },
           {
-            "cpu_seconds": 0.000372473999999956,
+            "cpu_seconds": 0.0004985319999999405,
             "detail": "",
             "encoding_bytes": 1319,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003479300000890362
+            "wall_seconds": 0.00046511899995493877
           }
         ],
         "terms": 3
@@ -9287,7 +9287,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.001339782000000067,
+            "cpu_seconds": 0.001629725999999998,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -9295,37 +9295,37 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007805290001670073
+            "wall_seconds": 0.0010284150000643422
           },
           {
-            "cpu_seconds": 0.0011364400000000163,
+            "cpu_seconds": 0.0012427900000000491,
             "detail": "",
             "encoding_bytes": 204,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010717449999901874
+            "wall_seconds": 0.0012142549999225594
           },
           {
-            "cpu_seconds": 0.0007976459999999852,
+            "cpu_seconds": 0.000814682000000011,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007547800000793359
+            "wall_seconds": 0.0007474930000626046
           },
           {
-            "cpu_seconds": 0.0004184320000000241,
+            "cpu_seconds": 0.0004485579999999878,
             "detail": "",
             "encoding_bytes": 785,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003517869999996037
+            "wall_seconds": 0.0003803009999501228
           },
           {
-            "cpu_seconds": 0.0008033049999999209,
+            "cpu_seconds": 0.0008209820000000256,
             "detail": "",
             "encoding_bytes": 864,
             "obligation": "value",
@@ -9341,10 +9341,10 @@
               "x0": "2",
               "x1": "3"
             },
-            "wall_seconds": 0.0008766720000039641
+            "wall_seconds": 0.0009001030000490573
           },
           {
-            "cpu_seconds": 0.0008084820000000548,
+            "cpu_seconds": 0.0033707469999999518,
             "detail": "",
             "encoding_bytes": 872,
             "obligation": "zero-support",
@@ -9360,10 +9360,10 @@
               "x0": "0",
               "x1": "1"
             },
-            "wall_seconds": 0.0007818999999926746
+            "wall_seconds": 0.0033649469999090798
           },
           {
-            "cpu_seconds": 0.0011162399999999906,
+            "cpu_seconds": 0.0033553240000000484,
             "detail": "",
             "encoding_bytes": 862,
             "obligation": "stored-support",
@@ -9379,10 +9379,10 @@
               "x0": "0",
               "x1": "0"
             },
-            "wall_seconds": 0.0010868370000025607
+            "wall_seconds": 0.0033177660000092146
           },
           {
-            "cpu_seconds": 0.0007716469999999864,
+            "cpu_seconds": 0.0009543610000000147,
             "detail": "",
             "encoding_bytes": 915,
             "obligation": "term-order",
@@ -9398,7 +9398,7 @@
               "x0": "0",
               "x1": "0"
             },
-            "wall_seconds": 0.0007437840001784934
+            "wall_seconds": 0.0009070430000974739
           }
         ],
         "terms": 2
@@ -9773,7 +9773,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.001162467999999972,
+            "cpu_seconds": 0.0037401169999999873,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -9781,55 +9781,55 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0008595260001129645
+            "wall_seconds": 0.0009894970000914327
           },
           {
-            "cpu_seconds": 0.0011328750000000332,
+            "cpu_seconds": 0.001305743999999942,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0010610079998514266
+            "wall_seconds": 0.0012359180000203196
           },
           {
-            "cpu_seconds": 0.0003455739999999041,
+            "cpu_seconds": 0.0004148770000000912,
             "detail": "",
             "encoding_bytes": 261,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0003096939999522874
+            "wall_seconds": 0.00038021099999241414
           },
           {
-            "cpu_seconds": 0.0003086790000000894,
+            "cpu_seconds": 0.00028574599999997563,
             "detail": "",
             "encoding_bytes": 444,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00025893800011544954
+            "wall_seconds": 0.00023000599981060077
           },
           {
-            "cpu_seconds": 0.00025961599999990703,
+            "cpu_seconds": 0.0002496610000000121,
             "detail": "",
             "encoding_bytes": 523,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00023995900005502335
+            "wall_seconds": 0.00023176799982138618
           },
           {
-            "cpu_seconds": 0.00025411700000010917,
+            "cpu_seconds": 0.00024432399999996246,
             "detail": "",
             "encoding_bytes": 531,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002352920000703307
+            "wall_seconds": 0.00022646000002168876
           },
           {
-            "cpu_seconds": 0.0011743769999998932,
+            "cpu_seconds": 0.001222950000000056,
             "detail": "",
             "encoding_bytes": 521,
             "obligation": "stored-support",
@@ -9841,16 +9841,16 @@
               "i3": "0",
               "n0": "1"
             },
-            "wall_seconds": 0.0012317739999616606
+            "wall_seconds": 0.001282176999893636
           },
           {
-            "cpu_seconds": 0.0004956370000001042,
+            "cpu_seconds": 0.0004584029999999961,
             "detail": "",
             "encoding_bytes": 529,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00040150099994207267
+            "wall_seconds": 0.00036140299994258385
           }
         ],
         "terms": 0
@@ -10037,7 +10037,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0013394209999999518,
+            "cpu_seconds": 0.0014736939999999699,
             "detail": "",
             "encoding_bytes": 154,
             "obligation": "precondition",
@@ -10045,70 +10045,70 @@
             "values": {
               "n0": "1"
             },
-            "wall_seconds": 0.0007886910000252101
+            "wall_seconds": 0.0009297470001001784
           },
           {
-            "cpu_seconds": 0.0011089890000000047,
+            "cpu_seconds": 0.0011919240000000109,
             "detail": "",
             "encoding_bytes": 195,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00104489399996055
+            "wall_seconds": 0.0011273049999545037
           },
           {
-            "cpu_seconds": 0.000826729000000026,
+            "cpu_seconds": 0.0008649370000000101,
             "detail": "",
             "encoding_bytes": 398,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0007858460000988998
+            "wall_seconds": 0.0008167869998487731
           },
           {
-            "cpu_seconds": 0.00046032499999992815,
+            "cpu_seconds": 0.000474056000000056,
             "detail": "",
             "encoding_bytes": 851,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00038872200002515456
+            "wall_seconds": 0.0003966060000948346
           },
           {
-            "cpu_seconds": 0.0004613159999999894,
+            "cpu_seconds": 0.000516538999999927,
             "detail": "",
             "encoding_bytes": 930,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004373449999093282
+            "wall_seconds": 0.0004937920000429585
           },
           {
-            "cpu_seconds": 0.0004883760000000681,
+            "cpu_seconds": 0.0008355840000000558,
             "detail": "",
             "encoding_bytes": 938,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00046552699996027513
+            "wall_seconds": 0.0008128520000809658
           },
           {
-            "cpu_seconds": 0.00044905799999994667,
+            "cpu_seconds": 0.00046505200000002134,
             "detail": "",
             "encoding_bytes": 928,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0004253270001299825
+            "wall_seconds": 0.00043840900002578564
           },
           {
-            "cpu_seconds": 0.0003177020000000308,
+            "cpu_seconds": 0.0003227299999999378,
             "detail": "",
             "encoding_bytes": 985,
             "obligation": "term-order",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0002939899998182227
+            "wall_seconds": 0.00029859899996154127
           }
         ],
         "terms": 2
@@ -11094,7 +11094,7 @@
         "mode": "production",
         "queries": [
           {
-            "cpu_seconds": 0.0020714510000000574,
+            "cpu_seconds": 0.0029443729999999446,
             "detail": "",
             "encoding_bytes": 259,
             "obligation": "precondition",
@@ -11105,64 +11105,64 @@
               "n2": "1",
               "n3": "1"
             },
-            "wall_seconds": 0.000880327999993824
+            "wall_seconds": 0.0011233180000544962
           },
           {
-            "cpu_seconds": 0.001099133999999946,
+            "cpu_seconds": 0.0017285630000000163,
             "detail": "",
             "encoding_bytes": 381,
             "obligation": "nonnegative-dimensions",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.001002831000050719
+            "wall_seconds": 0.0016262840001672885
           },
           {
-            "cpu_seconds": 0.0020341649999999767,
+            "cpu_seconds": 0.002217570000000002,
             "detail": "",
             "encoding_bytes": 15853,
             "obligation": "active-read-bounds",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.00152503300000717
+            "wall_seconds": 0.001663961000076597
           },
           {
-            "cpu_seconds": 0.01420851699999992,
+            "cpu_seconds": 0.01463282999999993,
             "detail": "",
             "encoding_bytes": 207173,
             "obligation": "shape",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.0110029919999306
+            "wall_seconds": 0.012440405999996074
           },
           {
-            "cpu_seconds": 0.015590753000000013,
+            "cpu_seconds": 0.01725116800000004,
             "detail": "",
             "encoding_bytes": 207420,
             "obligation": "value",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.015383969000140496
+            "wall_seconds": 0.017020298000034018
           },
           {
-            "cpu_seconds": 0.01671463299999998,
+            "cpu_seconds": 0.01875533600000001,
             "detail": "",
             "encoding_bytes": 207428,
             "obligation": "zero-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.01652226300006987
+            "wall_seconds": 0.018609666999964247
           },
           {
-            "cpu_seconds": 0.01574029500000007,
+            "cpu_seconds": 0.019084496999999923,
             "detail": "",
             "encoding_bytes": 207418,
             "obligation": "stored-support",
             "status": "unsat",
             "values": {},
-            "wall_seconds": 0.015475867000077415
+            "wall_seconds": 0.018858611000041492
           },
           {
-            "cpu_seconds": 0.024355303999999967,
+            "cpu_seconds": 0.026946208000000027,
             "detail": "",
             "encoding_bytes": 258746,
             "obligation": "term-order",
@@ -11305,7 +11305,7 @@
               "x8": "1",
               "x9": "1"
             },
-            "wall_seconds": 0.02478116699990096
+            "wall_seconds": 0.027309521000006498
           }
         ],
         "terms": 64
@@ -11396,7 +11396,7 @@
     }
   ],
   "replay_count": 40,
-  "solver_cpu_seconds": 0.3710591070000003,
+  "solver_cpu_seconds": 0.41956882199999995,
   "study": "pre-lock generated pilot; not a public patch evaluation",
-  "wall_seconds": 0.5962903199999801
+  "wall_seconds": 0.7143737209999017
 }

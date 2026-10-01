@@ -253,74 +253,98 @@ independent external review.
 
 ## 9. Public source-adapter equivalence
 
-The public study does not parse arbitrary Python or C++.  It admits a commit only
-when every production-code edit can be assigned to one of four source adapters
-with an explicit observable and source invariant.  The bounded models in
-`src/semantic_contract/public_adapters.py` validate the adapters on retained
-finite domains; the arguments below carry the universal burden.
+The public study does not parse arbitrary Python or C++. A commit is admitted
+only when every changed production hunk has a fixed parent/child source locator,
+a source-derived invariant, a complete observable, an independent before/after
+model, a universal argument, and an unchanged-downstream congruence. The exact
+hunk disposition is frozen in `data/public-adapter-evidence.json`. Bounded
+execution validates the models; it does not replace the source argument.
 
-**Theorem G (generated construction).**  Under P01's source invariant (one to
-four nonempty operand accesses, a nonempty result access, and a schedule that is
-a permutation of the used index names), the parent `exec`/`eval` region and the
-child direct-construction region produce identical CIN abstract syntax trees.
+**Proposition G (P01 admission failure).** The P01 parent and child construction
+regions are not equivalent on all source-reachable inputs satisfying the actual
+source assertion.
 
-**Proof.**  For every operand position, both regions call the same `TensorVar`
-indexing overload with the same ordered index-variable objects.  Induction on the
-operand list therefore gives the same left-associated multiplication tree.  Both
-then call the same result indexing and assignment overloads with the same result
-indices and that tree.  Finally, both start with the resulting assignment and,
-by induction on the reversed schedule, wrap it in the same `ForAll` node at every
-step.  The final trees are equal.  The proof concerns the constructed CIN object,
-not Python evaluation security or later compilation behavior.  QED.
+**Proof.** The source asserts only that the global index-variable dictionary is
+nonempty. Consider two operands, the first scalar and the second indexed by
+`i`, with indexed result `i`. The parent constructs Python source containing
+`tensor_vars[0][]`, which raises `SyntaxError`. The child constructs an empty
+index tuple and a one-index access directly, producing a CIN multiplication and
+assignment. The analogous scalar-second-operand and scalar-result cases also
+differ. Therefore per-operand and result non-scalarity cannot be introduced as a
+source invariant. The retained one-to-four-operand enumeration establishes only
+29,222 equal ASTs in a finite successful domain; it is not a universal source
+adapter, so P01 abstains. QED.
 
-**Theorem H (dispatcher extraction).**  Under P04's LLIR node invariant, the old
-monolithic lowerer and the extracted-helper lowerer emit identical strings.
+**Theorem H (P04 dispatcher extraction).** Under P04's fixed parent LLIR node
+invariant, the old monolithic lowerer and the extracted-helper lowerer emit
+identical strings.
 
-**Proof.**  Perform case analysis on the finite node variants accepted by the
-original dispatcher.  Primitive nodes use the same formatting expression.
-Each extracted helper contains the corresponding original branch with unchanged
-punctuation, indentation argument, and child order.  For recursive nodes, assume
-inductively that every proper child emits the same string.  Substitution into the
-unchanged surrounding format then yields the same result for arrays, expressions,
-loops, conditionals, and functions.  Lists preserve order by the same elementwise
-induction.  Unknown variants reach the same fallback.  QED.
+**Proof.** The parent reference is a monolithic transcription of the fixed
+parent file. The child reference separately implements expression, loop,
+conditional, and function helpers; no changed conditional or loop logic is
+shared between the two paths. Perform case analysis on every parent dispatcher
+variant. Primitive cases use the same literal punctuation and indentation. For
+recursive cases, assume proper children emit equal strings and substitute them
+into the unchanged surrounding format. The condition-list proof includes simple
+conditionals, explicit else bodies, `make_last_case_else=True`, and both present
+and absent `ForLoop.init`. Comment suppression, blank lines, list order, and the
+fallback remain top-level identity cases. Hence the complete generated strings
+are equal. Target-only negative controls that change a condition, drop an else,
+or remove a closing brace distinguish the paths, showing that the bounded check
+does not pass merely because of a shared renderer. QED.
 
-**Theorem I (ordered helper partition).**  Under P06's coordinate-resolver
-invariant, the original routine and the extracted five-helper routine emit the
-same LLIR statement sequence.
+**Theorem I (P06 ordered full-node partition).** Under P06's fixed
+coordinate-resolver invariant, the original routine and the extracted
+five-helper routine emit the same complete ordered LLIR node sequence.
 
-**Proof.**  Partition the original routine into the five maximal consecutive
-blocks for iterator loads, coordinate choice, compressed-result assembly,
-coordinate-end computation, and dense-coordinate computation.  Inspection of the
-complete production diff shows that each helper retains its block's predicate,
-loop order, and emitted statements.  The new caller concatenates the five helper
-results in the original block order.  Concatenation of equal subsequences gives
-the original full sequence.  QED.
-
-**Theorem J (truthiness cascade).**  Under P08's constructor invariant—at least
-one of a nonempty explicit mode order, a positive-rank shape, or a format is
-present—the old and new mode-order initializers return the same list.
-
-**Proof.**  If the explicit mode order is truthy, both select it.  Otherwise, if
-the shape is truthy, both select the identity order of its rank.  Otherwise the
-invariant supplies a format, and both select the identity order of the format
-order.  These cases are exhaustive and disjoint by branch priority.  The new
-`None` result when all three inputs are absent is outside the stated invariant.
+**Proof.** Partition the parent routine into the five maximal consecutive blocks
+for iterator loads, coordinate choice, compressed-result assembly,
+coordinate-end computation, and dense-coordinate computation. For each block,
+inspection of the fixed parent and child files shows that the child helper keeps
+the predicate, loop order, and every LLIR constructor field. The executable
+model compares typed node trees, including variable names and types, function
+names and arguments, array addresses and indices, operators, literals, loop
+bounds, updates, and bodies. The child caller concatenates the five helper
+results in parent order. Equal subsequences therefore yield the same complete
+sequence. A negative control changes the actual coordinate-end expression from
+`pX1_end = pX0 + 1` to `+2` while preserving the top-level node-kind signature;
+full-node comparison rejects it, so label equality is not used as evidence.
 QED.
 
-**Corollary K (downstream observation preservation).**  Suppose an admitted
+**Theorem J (P08 fixed-production truthiness cascade).** For every direct
+`TensorVar` construction in the fixed P08 child production tree, the parent and
+child mode-order initializers return the same list.
+
+**Proof.** The immutable child-tree inventory shows that direct production
+constructors in `ops.py`, `stensor.py`, and `cin_lowerer.py` pass a format; many
+also pass shape or mode order. `Workspace.__init__` sets `dim` and `dense` before
+calling `TensorVar.__init__`, and its overridden `format` property supplies a
+format object. Thus every fixed production call has at least one of a truthy
+explicit order, a truthy shape, or a present format. If the explicit order is
+truthy, both implementations select it. Otherwise, if shape is truthy, both
+select its identity order. Otherwise both select the identity order of the
+present format. These cases follow the same priority. The 96 equivalence-domain
+combinations exercise them. Four additional controls with absent format and no
+truthy explicit order or shape are executed separately: the parent raises
+`AttributeError`, whereas the child returns `None`. They are documented domain
+exclusions, not silently filtered successes, and direct external construction in
+that excluded domain is not claimed equivalent. QED.
+
+**Corollary K (downstream observation preservation).** Suppose an admitted
 adapter's observable is the complete input consumed by an unchanged deterministic
 downstream phase, and that phase has no hidden dependence on the replaced source
-mechanism.  Then equality of the adapter observable implies equality of every
+mechanism. Then equality of the adapter observable implies equality of every
 paper observation S, V, Z, M, and O at the phase output.
 
-**Proof.**  Equal phase inputs to the same deterministic relation yield equal
-phase outputs.  Each declared observation is a function of those outputs, so all
-five agree.  QED.
+**Proof.** Equal phase inputs to the same deterministic relation yield equal
+phase outputs. Each declared observation is a function of those outputs, so all
+five agree. QED.
 
-The corollary is deliberately conditional.  It excludes reflection on source
-text, timing, exception identity outside the adapter interface, undefined native
-behavior, changed downstream files, and omitted source edits.  Eight of twelve
-commits violate the adapter boundary and remain abstentions.  The retrospective
-temporal split is evidence about adapter coverage, not a blind estimate of a
-population parameter.
+The corollary is deliberately conditional. It excludes reflection on source
+text, timing, direct external calls outside the documented invariant, exception
+identity outside the adapter interface, undefined native behavior, changed
+downstream files, and omitted source edits. Three of twelve commits pass all
+seven gates; nine, including P01, remain abstentions. Development admits one of
+four and the later retrospective segment two of eight. These are descriptive
+coverage counts, not a blind estimate of a population parameter.
+

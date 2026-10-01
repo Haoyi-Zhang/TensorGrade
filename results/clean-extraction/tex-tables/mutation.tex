@@ -1,12 +1,12 @@
 \begin{table}[t]
-\caption{Equal-budget synthetic negative-control detection. Mutants are not historical Scorch defects.}\label{tab:mutation}
+\caption{Synthetic negative-control detection under a common cap of 64 candidate input slots per mutant. Execution stops at first detection, so actual executions differ. Mutants are not historical Scorch defects.}\label{tab:mutation}
 \centering
-\begin{tabular}{lrrr}
+\begin{tabular}{lrrrr}
 \toprule
-Selection policy & Detected & Total & Rate\\\midrule
-Developer examples & 16 & 20 & 80\%\\
-Seeded random & 19 & 20 & 95\%\\
-Stratified boundary & 20 & 20 & 100\%\\
+Selection policy & Detected & Total & Actual exec. & Max slots\\\midrule
+Repeated developer indices & 14 & 18 & 325 & 1152\\
+Seeded random with replacement & 18 & 18 & 121 & 1152\\
+Evenly spaced enumeration indices & 18 & 18 & 318 & 1152\\
 \bottomrule
 \end{tabular}
 \end{table}

@@ -1,42 +1,41 @@
 {
-  "count": 9,
-  "all_byte_identical": true,
-  "tables": [
+  "all_equal": true,
+  "files": [
     {
       "file": "adapter-cases.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "consumer-catalog.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "diagnostic-catalog.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "grades.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "mutation-detail.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "mutation.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "pilot-catalog.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "public-corpus.tex",
-      "byte_identical": true
+      "equal": true
     },
     {
       "file": "validation.tex",
-      "byte_identical": true
+      "equal": true
     }
   ]
 }

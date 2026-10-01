@@ -43,9 +43,10 @@ production-file scope, disposition reason, and source URL. The stable split valu
 `held-out` means the later retrospective segment; it does not imply preregistration
 or blinding.
 
-`public-study.json` embeds the corpus, per-adapter bounded case/mismatch counts,
-per-mutant first detections for three equal-budget policies, aggregate coverage,
-and explicit interpretation text. A zero adapter mismatch is not an upstream test
+`public-study.json` embeds the corpus, P01 candidate diagnostics, per-admitted-
+adapter bounded case/mismatch counts, four P08 excluded-domain controls,
+per-mutant first-detection slots and actual executions for three literal selection
+schedules, aggregate coverage, and explicit interpretation text. A zero adapter mismatch is not an upstream test
 or universal proof.
 
 ## Raw semantic evidence

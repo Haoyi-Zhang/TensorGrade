@@ -10,7 +10,7 @@
   },
   "runs": [
     {
-      "child_peak_rss_kib_upper_bound": 128980,
+      "child_peak_rss_kib_upper_bound": 130424,
       "command": [
         "-m",
         "unittest",
@@ -21,12 +21,12 @@
       ],
       "exit_code": 0,
       "name": "unit-tests",
-      "process_cpu_seconds": 3.206108,
-      "wall_seconds": 3.2139788100000715,
+      "process_cpu_seconds": 3.512052,
+      "wall_seconds": 3.522039027000119,
       "wall_timeout": false
     },
     {
-      "child_peak_rss_kib_upper_bound": 128980,
+      "child_peak_rss_kib_upper_bound": 130424,
       "command": [
         "audit_references.py",
         "--output",
@@ -34,12 +34,12 @@
       ],
       "exit_code": 0,
       "name": "reference-audit",
-      "process_cpu_seconds": 0.5904869999999999,
-      "wall_seconds": 0.5944983860000548,
+      "process_cpu_seconds": 0.603957,
+      "wall_seconds": 0.6060779849999562,
       "wall_timeout": false
     },
     {
-      "child_peak_rss_kib_upper_bound": 128980,
+      "child_peak_rss_kib_upper_bound": 130424,
       "command": [
         "run_pilot.py",
         "--output",
@@ -47,12 +47,12 @@
       ],
       "exit_code": 0,
       "name": "pilot",
-      "process_cpu_seconds": 1.159402,
-      "wall_seconds": 1.1633796010000879,
+      "process_cpu_seconds": 1.304765000000001,
+      "wall_seconds": 1.3081158800000594,
       "wall_timeout": false
     },
     {
-      "child_peak_rss_kib_upper_bound": 128980,
+      "child_peak_rss_kib_upper_bound": 130424,
       "command": [
         "run_diagnostics.py",
         "--output",
@@ -60,12 +60,25 @@
       ],
       "exit_code": 0,
       "name": "diagnostics",
-      "process_cpu_seconds": 1.3960030000000003,
-      "wall_seconds": 1.4006944909999675,
+      "process_cpu_seconds": 1.5087119999999994,
+      "wall_seconds": 1.5110777709999184,
       "wall_timeout": false
     },
     {
-      "child_peak_rss_kib_upper_bound": 128980,
+      "child_peak_rss_kib_upper_bound": 130424,
+      "command": [
+        "run_robustness_audit.py",
+        "--output",
+        "robustness-audit.json"
+      ],
+      "exit_code": 0,
+      "name": "robustness-audit",
+      "process_cpu_seconds": 3.9652889999999994,
+      "wall_seconds": 3.9708139589999973,
+      "wall_timeout": false
+    },
+    {
+      "child_peak_rss_kib_upper_bound": 130424,
       "command": [
         "run_public_study.py",
         "--corpus",
@@ -79,10 +92,10 @@
       ],
       "exit_code": 0,
       "name": "public-study",
-      "process_cpu_seconds": 2.729932999999999,
-      "wall_seconds": 2.732980950999945,
+      "process_cpu_seconds": 2.811837,
+      "wall_seconds": 2.8146674509998775,
       "wall_timeout": false
     }
   ],
-  "total_process_cpu_seconds": 9.081933
+  "total_process_cpu_seconds": 13.706612
 }

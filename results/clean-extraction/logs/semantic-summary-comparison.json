@@ -1,15 +1,9 @@
 {
-  "clean_environment": {
-    "current_peak_rss_kib": 130460,
-    "current_whole_process_cpu_seconds": 9.258232
-  },
-  "excluded_fields": [
+  "current_only": [],
+  "equal": true,
+  "ignored_fields": [
     "current_peak_rss_kib",
     "current_whole_process_cpu_seconds"
   ],
-  "retained_environment": {
-    "current_peak_rss_kib": 128980,
-    "current_whole_process_cpu_seconds": 9.081933
-  },
-  "same_excluding_environmental_fields": true
+  "reproduced_only": []
 }

@@ -16,12 +16,17 @@ test_sparse_certificates_and_tampering (test_contracts.Tests.test_sparse_certifi
 test_unknown_never_becomes_complete (test_contracts.Tests.test_unknown_never_becomes_complete) ... ok
 test_all_admitted_adapters_match_on_retained_domain (test_public_adapters.PublicAdapterStudyTest.test_all_admitted_adapters_match_on_retained_domain) ... ok
 test_corpus_denominator_and_split_are_frozen (test_public_adapters.PublicAdapterStudyTest.test_corpus_denominator_and_split_are_frozen) ... ok
-test_negative_controls_are_not_silently_accepted (test_public_adapters.PublicAdapterStudyTest.test_negative_controls_are_not_silently_accepted) ... ok
-test_p01_includes_declared_four_operand_boundary (test_public_adapters.PublicAdapterStudyTest.test_p01_includes_declared_four_operand_boundary) ... ok
+test_hunk_disposition_and_source_invariant_evidence_is_complete (test_public_adapters.PublicAdapterStudyTest.test_hunk_disposition_and_source_invariant_evidence_is_complete) ... ok
+test_negative_controls_and_candidate_slot_accounting (test_public_adapters.PublicAdapterStudyTest.test_negative_controls_and_candidate_slot_accounting) ... ok
+test_p01_range_is_finite_boundary_not_source_invariant (test_public_adapters.PublicAdapterStudyTest.test_p01_range_is_finite_boundary_not_source_invariant) ... ok
+test_p04_independent_conditional_paths_and_branch_coverage (test_public_adapters.PublicAdapterStudyTest.test_p04_independent_conditional_paths_and_branch_coverage) ... ok
+test_p06_compares_complete_nodes_not_labels (test_public_adapters.PublicAdapterStudyTest.test_p06_compares_complete_nodes_not_labels) ... ok
+test_p08_keeps_96_equivalence_cases_and_four_excluded_controls (test_public_adapters.PublicAdapterStudyTest.test_p08_keeps_96_equivalence_cases_and_four_excluded_controls) ... ok
+test_source_pins_have_fixed_parent_and_child (test_public_adapters.PublicAdapterStudyTest.test_source_pins_have_fixed_parent_and_child) ... ok
 test_bad_inventory_status_is_rejected (test_references.ReferenceAuditTest.test_bad_inventory_status_is_rejected) ... ok
+test_complete_primary_record_audit_is_delivered (test_references.ReferenceAuditTest.test_complete_primary_record_audit_is_delivered) ... ok
 test_current_nearest_tensor_superoptimizers_are_cited (test_references.ReferenceAuditTest.test_current_nearest_tensor_superoptimizers_are_cited) ... ok
 test_every_record_has_a_stable_locator (test_references.ReferenceAuditTest.test_every_record_has_a_stable_locator) ... ok
-test_fresh_primary_record_spotchecks_are_delivered (test_references.ReferenceAuditTest.test_fresh_primary_record_spotchecks_are_delivered) ... ok
 test_frozen_inventory_is_consistent (test_references.ReferenceAuditTest.test_frozen_inventory_is_consistent) ... ok
 test_unapproved_stable_host_is_rejected (test_references.ReferenceAuditTest.test_unapproved_stable_host_is_rejected) ... ok
 test_certificate_rejects_binary_float_values (test_replay_hardening.ReplayHardeningTest.test_certificate_rejects_binary_float_values) ... ok
@@ -33,6 +38,6 @@ test_replay_rejects_malformed_case_before_interpretation (test_replay_hardening.
 test_replay_validator_matches_front_end_admission_on_retained_cases (test_replay_hardening.ReplayHardeningTest.test_replay_validator_matches_front_end_admission_on_retained_cases) ... ok
 
 ----------------------------------------------------------------------
-Ran 33 tests in 2.837s
+Ran 38 tests in 2.688s
 
 OK

@@ -1,41 +1,142 @@
 {
-  "abstained_count": 8,
+  "abstained_count": 9,
   "adapter_results": [
     {
-      "adapter": "P01",
-      "bounded_case_count": 29222,
-      "mismatch_count": 0,
-      "mismatches": []
-    },
-    {
       "adapter": "P04",
-      "bounded_case_count": 22,
+      "bounded_case_count": 30,
+      "coverage_map": {
+        "BlankLine": [
+          "blank",
+          "list-sequence"
+        ],
+        "Comment": [
+          "comment-visible",
+          "comment-suppressed",
+          "list-sequence"
+        ],
+        "ForLoop.init-none": [
+          "for-init-none"
+        ],
+        "ForLoop.init-present": [
+          "for-with-init"
+        ],
+        "ForLoopAuto": [
+          "for-auto"
+        ],
+        "FunctionCallStmt/VarInit/Assign": [
+          "call-statement",
+          "var-init",
+          "assign"
+        ],
+        "IfThenElse.cond-list": [
+          "if-chain-else"
+        ],
+        "IfThenElse.make-last-case-else": [
+          "if-last-case-else"
+        ],
+        "IfThenElse.simple": [
+          "if-simple",
+          "if-simple-else"
+        ],
+        "Literal/Var/Cast/Sizeof/BinOp/UnaryOp/Call/Array/ArrayAccess": [
+          "literal-zero",
+          "var",
+          "cast",
+          "sizeof",
+          "binop",
+          "unary",
+          "call-expression",
+          "array",
+          "array-access"
+        ],
+        "VarDecl/Increment/Return/Function": [
+          "var-decl",
+          "increment",
+          "increment-no-semicolon",
+          "return",
+          "function"
+        ],
+        "WhileLoop": [
+          "while"
+        ],
+        "list-dispatch": [
+          "list-sequence"
+        ]
+      },
       "mismatch_count": 0,
-      "mismatches": []
+      "mismatches": [],
+      "source_pin": {
+        "child": "d7a9cdc82819750c1a1285cded8385165ea51371",
+        "child_tree": "90f89cde813156464b6fefbf016b3de4597568fc",
+        "decision": "admitted",
+        "parent": "08a92fe381cbddcbcfa2a616644f65b149d50287",
+        "parent_tree": "94f3271ae26446aa344098e1d84c03c5efb3198d"
+      }
     },
     {
       "adapter": "P06",
       "bounded_case_count": 400,
       "mismatch_count": 0,
-      "mismatches": []
+      "mismatches": [],
+      "source_pin": {
+        "child": "2105686711292cd1d1eb2438035b555fa644bf2a",
+        "child_tree": "618ebda80bca1961391c7c352017db5abadd8e4d",
+        "decision": "admitted",
+        "parent": "404e10762f866303758ec60ac6a9cf996be7da0c",
+        "parent_tree": "a304c3a16ed566c20f91c83cb2fc9ea0681993e3"
+      }
     },
     {
       "adapter": "P08",
       "bounded_case_count": 96,
+      "excluded_domain_controls": [
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=None, shape_rank=None, format_order=None)",
+          "same": false
+        },
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=None, shape_rank=0, format_order=None)",
+          "same": false
+        },
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=(), shape_rank=None, format_order=None)",
+          "same": false
+        },
+        {
+          "after": "('value', None)",
+          "before": "('exception', 'AttributeError')",
+          "case": "ModeInit(explicit=(), shape_rank=0, format_order=None)",
+          "same": false
+        }
+      ],
+      "excluded_domain_count": 4,
       "mismatch_count": 0,
-      "mismatches": []
+      "mismatches": [],
+      "source_pin": {
+        "child": "33532a3092035a93d4e78936e089c69fa6f3d3e9",
+        "child_tree": "49d2a0fb1f710b4ea97bea54d9bb6bee5e5afc24",
+        "decision": "admitted",
+        "parent": "b606b3078082ba78a57ed818b848db7214026788",
+        "parent_tree": "43fa6a5fd0547dd6bd4b6f9692ff2c7207a51622"
+      }
     }
   ],
-  "admitted_count": 4,
+  "admitted_count": 3,
   "corpus": [
     {
-      "adapter_id": "P01",
+      "adapter_id": "",
       "commit_sha": "72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
       "commit_title": "Replace exec/eval with direct Python calls for CIN construction in einsum",
-      "decision": "admitted",
+      "decision": "abstained",
       "id": "P01",
       "production_files": "src/scorch/ops.py",
-      "reason": "Complete one-file construction refactor; exact CIN AST equality under the source region's nonempty-access invariant.",
+      "reason": "The 1--4 operand range is only a finite validation boundary. The source asserts only that some index variable exists; mixed scalar/non-scalar operands and scalar results reach the changed region and can change parent/child behavior, so the source invariant required by the adapter cannot be established.",
       "source_url": "https://github.com/bobbyyyan/scorch/commit/72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
       "split": "development"
     },
@@ -68,7 +169,7 @@
       "decision": "admitted",
       "id": "P04",
       "production_files": "src/scorch/compiler/codegen.py",
-      "reason": "Complete one-file dispatch extraction; structural induction gives identical generated C++ text for the changed LLIR algebra.",
+      "reason": "Complete one-file dispatch extraction. Independent parent-monolith and child-helper models cover all changed renderer branches, including comments, blank lines, condition lists, make_last_case_else, and ForLoop.init=None; structural induction connects node equality to identical C++ text.",
       "source_url": "https://github.com/bobbyyyan/scorch/commit/d7a9cdc82819750c1a1285cded8385165ea51371",
       "split": "development"
     },
@@ -90,7 +191,7 @@
       "decision": "admitted",
       "id": "P06",
       "production_files": "src/scorch/compiler/iter_lattice.py",
-      "reason": "Sequential extraction partitions the original statement sequence into five helpers called in the original order; branch predicates and emitted nodes are unchanged.",
+      "reason": "The child partitions the parent method into five helpers invoked in the original order. The executable adapter compares complete LLIR node trees including types operands array addresses loop bounds and updates; same-kind/different-field negative controls reject label-only equality.",
       "source_url": "https://github.com/bobbyyyan/scorch/commit/2105686711292cd1d1eb2438035b555fa644bf2a",
       "split": "held-out"
     },
@@ -111,8 +212,8 @@
       "commit_title": "Clean up stale TODOs and enable kij outer-product SpMM test",
       "decision": "admitted",
       "id": "P08",
-      "production_files": "src/scorch/compiler/cin.py;comments/tests",
-      "reason": "Only production expression is an equivalent mode-order initialization under the existing TensorVar invariant; remaining production edits are comments and the test edit is non-runtime.",
+      "production_files": "src/scorch/compiler/cin.py;src/scorch/compiler/cin_lowerer.py;src/scorch/compiler/iter_lattice.py",
+      "reason": "The only runtime production hunk is TensorVar mode-order initialization; the other two production edits are comments. Fixed-tree production call sites always supply a format directly or through Workspace.format. Ninety-six equivalence-domain combinations match; four absent-format controls are separately recorded as old AttributeError versus new None and excluded by the documented production-call invariant.",
       "source_url": "https://github.com/bobbyyyan/scorch/commit/33532a3092035a93d4e78936e089c69fa6f3d3e9",
       "split": "held-out"
     },
@@ -162,420 +263,569 @@
     }
   ],
   "corpus_count": 12,
-  "coverage": 0.3333333333333333,
-  "cpu_seconds": 2.135486322,
-  "development_admitted": 2,
+  "coverage": 0.25,
+  "cpu_seconds": 2.215865526,
+  "development_admitted": 1,
   "development_count": 4,
   "errors": [],
   "held_out_admitted": 2,
   "held_out_count": 8,
-  "interpretation": "Admitted means the entire production diff was mapped to a declared source adapter and its adapter equivalence was checked on the retained bounded domain, backed by a separate prose universal proof. It is not an execution of upstream Scorch or an independent proof review. Abstentions remain in the denominator. Mutants are synthetic negative controls, not historical Scorch defects.",
+  "interpretation": "Admitted means every production hunk was dispositioned and a source-derived invariant, independent before/after model, universal argument, and unchanged-downstream congruence were retained. P01 is an abstained candidate: its 1--4 operand range is only a finite validation boundary. P08 has 96 equivalence-domain cases and four separately executed excluded-domain controls. The study does not execute upstream Scorch or constitute independent proof review. Mutants are synthetic controls.",
   "mutation_study": {
-    "budget_per_adapter": 64,
-    "mutant_count": 20,
+    "candidate_slot_cap_per_mutant": 64,
+    "interpretation": "The third policy is an evenly spaced grid over enumeration indices, not semantic-feature stratification. Small domains are exhausted and then repeated to fill the candidate-slot cap. All policies stop at first detection; actual executions are recorded.",
+    "mutant_count": 18,
+    "policy_metadata": {
+      "P04": {
+        "candidate_slot_cap_per_mutant": 64,
+        "developer_unique_indices_in_full_schedule": 11,
+        "domain_size": 30,
+        "enumeration_order_dependency": true,
+        "even_grid_repeats_because_domain_smaller_than_cap": true,
+        "even_grid_unique_indices_before_repetition": 30,
+        "random_unique_indices_in_full_schedule": 24
+      },
+      "P06": {
+        "candidate_slot_cap_per_mutant": 64,
+        "developer_unique_indices_in_full_schedule": 5,
+        "domain_size": 400,
+        "enumeration_order_dependency": true,
+        "even_grid_repeats_because_domain_smaller_than_cap": false,
+        "even_grid_unique_indices_before_repetition": 64,
+        "random_unique_indices_in_full_schedule": 59
+      },
+      "P08": {
+        "candidate_slot_cap_per_mutant": 64,
+        "developer_unique_indices_in_full_schedule": 4,
+        "domain_size": 96,
+        "enumeration_order_dependency": true,
+        "even_grid_repeats_because_domain_smaller_than_cap": false,
+        "even_grid_unique_indices_before_repetition": 64,
+        "random_unique_indices_in_full_schedule": 47
+      }
+    },
     "rows": [
       {
-        "adapter": "P01",
-        "developer-examples": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        },
-        "mutant": "drop-last-operand",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 1
-        },
-        "stratified-boundary": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        }
-      },
-      {
-        "adapter": "P01",
-        "developer-examples": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        },
-        "mutant": "duplicate-first-operand",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 1
-        },
-        "stratified-boundary": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        }
-      },
-      {
-        "adapter": "P01",
-        "developer-examples": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        },
-        "mutant": "reverse-product",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 1
-        },
-        "stratified-boundary": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        }
-      },
-      {
-        "adapter": "P01",
-        "developer-examples": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        },
-        "mutant": "wrong-lhs",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 1
-        },
-        "stratified-boundary": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        }
-      },
-      {
-        "adapter": "P01",
-        "developer-examples": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        },
-        "mutant": "reverse-loop-nesting",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 1
-        },
-        "stratified-boundary": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 2
-        }
-      },
-      {
         "adapter": "P04",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 14,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 2
+          "distinct_indices_executed": 14,
+          "first_detection_slot": 14
         },
         "mutant": "omit-call-semicolon",
-        "random": {
-          "budget": 64,
-          "detected": false,
-          "first_detection_execution": null
-        },
-        "stratified-boundary": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 11
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 38,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 21,
+          "first_detection_slot": 38
         }
       },
       {
         "adapter": "P04",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 29,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 13
+          "distinct_indices_executed": 29,
+          "first_detection_slot": 29
         },
         "mutant": "reverse-function-args",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 10,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 21
+          "distinct_indices_executed": 10,
+          "first_detection_slot": 10
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 8,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 22
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 8
         }
       },
       {
         "adapter": "P04",
-        "developer-examples": {
-          "budget": 64,
-          "detected": false,
-          "first_detection_execution": null
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 9,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 9,
+          "first_detection_slot": 9
         },
         "mutant": "drop-array-braces",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 17
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 11,
+          "first_detection_slot": null
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 26,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 9
+          "distinct_indices_executed": 19,
+          "first_detection_slot": 26
         }
       },
       {
         "adapter": "P04",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 18,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 6
+          "distinct_indices_executed": 18,
+          "first_detection_slot": 18
         },
         "mutant": "increment-always-semicolon",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 4,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 33
+          "distinct_indices_executed": 4,
+          "first_detection_slot": 4
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 15
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
         }
       },
       {
         "adapter": "P04",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 29,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 13
+          "distinct_indices_executed": 29,
+          "first_detection_slot": 29
         },
         "mutant": "drop-final-brace",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 10,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 21
+          "distinct_indices_executed": 10,
+          "first_detection_slot": 10
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 8,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 22
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 8
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 21,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 21,
+          "first_detection_slot": 21
+        },
+        "mutant": "conditional-change-condition",
+        "repeated-developer-indices": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 22,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 22,
+          "first_detection_slot": 22
+        },
+        "mutant": "conditional-drop-else",
+        "repeated-developer-indices": {
+          "actual_executions": 7,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 7
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
+        }
+      },
+      {
+        "adapter": "P04",
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 21,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 21,
+          "first_detection_slot": 21
+        },
+        "mutant": "conditional-drop-closing-brace",
+        "repeated-developer-indices": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
+        },
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
         }
       },
       {
         "adapter": "P06",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 20,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 3
+          "distinct_indices_executed": 20,
+          "first_detection_slot": 20
         },
         "mutant": "drop-load",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 1
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 20
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
         }
       },
       {
         "adapter": "P06",
-        "developer-examples": {
-          "budget": 64,
-          "detected": false,
-          "first_detection_execution": null
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 39,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 39,
+          "first_detection_slot": 39
         },
         "mutant": "max-not-min",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 4
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 5,
+          "first_detection_slot": null
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 4,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 39
+          "distinct_indices_executed": 4,
+          "first_detection_slot": 4
         }
       },
       {
         "adapter": "P06",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 7,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 5
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 7
         },
         "mutant": "assemble-last",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 5,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 13
+          "distinct_indices_executed": 5,
+          "first_detection_slot": 5
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 7,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 7
+          "distinct_indices_executed": 7,
+          "first_detection_slot": 7
         }
       },
       {
         "adapter": "P06",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 27,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 3
+          "distinct_indices_executed": 27,
+          "first_detection_slot": 27
         },
         "mutant": "coord-end-off-by-one",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 2
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 27
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
         }
       },
       {
         "adapter": "P06",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 5
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
         },
         "mutant": "drop-dense",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 5,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 5
+          "distinct_indices_executed": 5,
+          "first_detection_slot": 5
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 3
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
         }
       },
       {
         "adapter": "P08",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 32,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 3
+          "distinct_indices_executed": 32,
+          "first_detection_slot": 32
         },
         "mutant": "ignore-explicit",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 2
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 1,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 32
+          "distinct_indices_executed": 1,
+          "first_detection_slot": 1
         }
       },
       {
         "adapter": "P08",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 2
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
         },
         "mutant": "shape-off-by-one",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 4
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 6
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
         }
       },
       {
         "adapter": "P08",
-        "developer-examples": {
-          "budget": 64,
-          "detected": false,
-          "first_detection_execution": null
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
         },
         "mutant": "format-off-by-one",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 3
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 4,
+          "first_detection_slot": null
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 2
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
         }
       },
       {
         "adapter": "P08",
-        "developer-examples": {
-          "budget": 64,
-          "detected": false,
-          "first_detection_execution": null
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
+          "detected": true,
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
         },
         "mutant": "reverse-default",
-        "random": {
-          "budget": 64,
-          "detected": true,
-          "first_detection_execution": 3
+        "repeated-developer-indices": {
+          "actual_executions": 64,
+          "candidate_slot_cap": 64,
+          "detected": false,
+          "distinct_indices_executed": 4,
+          "first_detection_slot": null
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 3,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 2
+          "distinct_indices_executed": 3,
+          "first_detection_slot": 3
         }
       },
       {
         "adapter": "P08",
-        "developer-examples": {
-          "budget": 64,
+        "evenly-spaced-enumeration-indices": {
+          "actual_executions": 17,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 2
+          "distinct_indices_executed": 17,
+          "first_detection_slot": 17
         },
         "mutant": "empty-is-explicit",
-        "random": {
-          "budget": 64,
+        "repeated-developer-indices": {
+          "actual_executions": 2,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 3
+          "distinct_indices_executed": 2,
+          "first_detection_slot": 2
         },
-        "stratified-boundary": {
-          "budget": 64,
+        "seeded-random-with-replacement": {
+          "actual_executions": 6,
+          "candidate_slot_cap": 64,
           "detected": true,
-          "first_detection_execution": 17
+          "distinct_indices_executed": 6,
+          "first_detection_slot": 6
         }
       }
     ],
     "seed": 20260915,
     "summary": {
-      "developer-examples": {
-        "detected": 16,
-        "rate": 0.8,
-        "total": 20
-      },
-      "random": {
-        "detected": 19,
-        "rate": 0.95,
-        "total": 20
-      },
-      "stratified-boundary": {
-        "detected": 20,
+      "evenly-spaced-enumeration-indices": {
+        "actual_executions": 318,
+        "candidate_slots_if_no_early_stop": 1152,
+        "detected": 18,
         "rate": 1.0,
-        "total": 20
+        "total": 18
+      },
+      "repeated-developer-indices": {
+        "actual_executions": 325,
+        "candidate_slots_if_no_early_stop": 1152,
+        "detected": 14,
+        "rate": 0.7777777777777778,
+        "total": 18
+      },
+      "seeded-random-with-replacement": {
+        "actual_executions": 121,
+        "candidate_slots_if_no_early_stop": 1152,
+        "detected": 18,
+        "rate": 1.0,
+        "total": 18
       }
     }
   },
-  "peak_rss_kib": 105776,
+  "p01_candidate": {
+    "adapter": "P01",
+    "admission_failure": "The 1--4 operand range is a finite validation boundary, not a source restriction. Per-operand and result non-scalarity is not enforced by the source; mixed scalar/indexed inputs reach the changed hunk and can change the exception class.",
+    "decision": "abstained",
+    "scalar_boundary_case_count": 4,
+    "scalar_boundary_controls": [
+      {
+        "after": "('value', Loop(index='i', stmt=Assign(lhs=Access(tensor='R', indices=('i',)), rhs=Mul(left=Access(tensor='A', indices=()), right=Access(tensor='B', indices=('i',))))))",
+        "before": "('exception', 'SyntaxError')",
+        "case": "EinsumBuildSpec(operands=((), ('i',)), result=('i',), schedule=('i',))",
+        "same": false
+      },
+      {
+        "after": "('value', Loop(index='i', stmt=Assign(lhs=Access(tensor='R', indices=('i',)), rhs=Mul(left=Access(tensor='A', indices=('i',)), right=Access(tensor='B', indices=())))))",
+        "before": "('exception', 'SyntaxError')",
+        "case": "EinsumBuildSpec(operands=(('i',), ()), result=('i',), schedule=('i',))",
+        "same": false
+      },
+      {
+        "after": "('value', Loop(index='i', stmt=Assign(lhs=Access(tensor='R', indices=()), rhs=Access(tensor='A', indices=('i',)))))",
+        "before": "('exception', 'SyntaxError')",
+        "case": "EinsumBuildSpec(operands=(('i',),), result=(), schedule=('i',))",
+        "same": false
+      },
+      {
+        "after": "('exception', 'AssertionError')",
+        "before": "('exception', 'AssertionError')",
+        "case": "EinsumBuildSpec(operands=((),), result=(), schedule=())",
+        "same": true
+      }
+    ],
+    "source_pin": {
+      "child": "72c55d36de12f45a4dcdd222f760b0fb6c3b6276",
+      "child_tree": "ddca30e628378ad419ca4fb2462beac96291226c",
+      "decision": "abstained",
+      "parent": "b061b530c08141bf01f190ccb515906e4570f8cf",
+      "parent_tree": "c14df7e097884f46e36c42fbddf761b627ef2515"
+    },
+    "successful_domain_case_count": 29222,
+    "successful_domain_mismatch_count": 0,
+    "successful_domain_mismatches": []
+  },
+  "peak_rss_kib": 98732,
   "repository": "bobbyyyan/scorch",
+  "source_evidence": "data/public-adapter-evidence.json",
   "study": "frozen public-source adapter coverage and synthetic negative controls",
-  "wall_seconds": 2.136251580000021
+  "wall_seconds": 2.217888561000109
 }

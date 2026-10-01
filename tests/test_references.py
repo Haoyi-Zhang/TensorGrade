@@ -12,13 +12,14 @@ ROOT = Path(__file__).resolve().parents[1]
 BIB = ROOT / "data/references.bib"
 INVENTORY = ROOT / "data/reference-audit.csv"
 CITATIONS = ROOT / "data/cited-reference-keys.txt"
-SPOTCHECKS = ROOT / "data/reference-live-spot-check.csv"
+PRIMARY_RECORDS = ROOT / "data/reference-primary-record-audit.csv"
+CONTEXT_AUDIT = ROOT / "data/reference-context-audit.csv"
 
 
 class ReferenceAuditTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.report = audit(BIB, INVENTORY, CITATIONS, SPOTCHECKS)
+        cls.report = audit(BIB, INVENTORY, CITATIONS, PRIMARY_RECORDS, CONTEXT_AUDIT)
 
     def test_frozen_inventory_is_consistent(self):
         self.assertTrue(self.report["passed"], self.report["errors"])
@@ -31,9 +32,11 @@ class ReferenceAuditTest(unittest.TestCase):
         self.assertEqual(self.report["doi_records"], 77)
         self.assertEqual(self.report["stable_url_only_records"], 6)
 
-    def test_fresh_primary_record_spotchecks_are_delivered(self):
-        self.assertEqual(self.report["primary_record_spotchecks"], 16)
-        self.assertEqual(self.report["latest_primary_record_spotcheck"], "2026-09-19")
+    def test_complete_primary_record_audit_is_delivered(self):
+        self.assertEqual(self.report["primary_record_checks"], 83)
+        self.assertEqual(self.report["latest_primary_record_check"], "2026-09-29")
+        self.assertEqual(self.report["citation_context_checks"], 83)
+        self.assertEqual(self.report["latest_citation_context_check"], "2026-09-29")
 
     def test_current_nearest_tensor_superoptimizers_are_cited(self):
         entries = {entry["key"] for entry in parse_bibtex(BIB.read_text())}
@@ -55,7 +58,7 @@ class ReferenceAuditTest(unittest.TestCase):
                 writer = csv.DictWriter(handle, fieldnames=fields)
                 writer.writeheader()
                 writer.writerows(rows)
-            report = audit(BIB, bad, CITATIONS, SPOTCHECKS)
+            report = audit(BIB, bad, CITATIONS, PRIMARY_RECORDS)
         self.assertFalse(report["passed"])
         self.assertTrue(any("status" in error for error in report["errors"]))
 
@@ -80,7 +83,7 @@ class ReferenceAuditTest(unittest.TestCase):
                     "https://mirror.invalid/mirage",
                 )
             )
-            report = audit(bad_bib, bad_inventory, CITATIONS, SPOTCHECKS)
+            report = audit(bad_bib, bad_inventory, CITATIONS, PRIMARY_RECORDS)
         self.assertFalse(report["passed"])
         self.assertTrue(any("approved primary-record" in error for error in report["errors"]))
 

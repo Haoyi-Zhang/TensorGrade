@@ -1,18 +1,18 @@
-# Clean-extraction verification record
+# Clean-extraction verification
 
-This directory records the final same-environment verification run made from
-fresh extractions of the project and standalone-repository archives. The
-scientific output is in `run/`; `reproduced-summary.json` is the reconciled
-summary; `tex-tables/` contains the nine regenerated manuscript tables; and
-`logs/` contains command output plus semantic-summary, table, and rendered-PDF
-comparisons.
+This directory records a verification run performed from an extracted staging
+archive after the final scientific, bibliographic, and writing repairs.
 
-The clean scientific summary matches `../summary.json` after excluding only the
-environment-dependent CPU-time and peak-RSS fields. All nine tables are
-byte-identical to the manuscript inputs. The clean main and supplement rebuilds
-have 36 and 10 pages, respectively, and their 96-dpi page renders are identical
-to the visually inspected retained PDFs.
+The extracted copy completed six sequential bounded phases: unit/adversarial
+tests, the offline 83-record bibliography audit, the semantic pilot, the frozen
+seed-1729 diagnostic campaign, a separately reported eight-seed post-hoc
+sensitivity audit, and the public source-adapter study.  It then regenerated the
+summary and all nine TeX tables, ran the three public CLI examples, rebuilt the
+36-page article and 10-page supplement, checked fonts and Ghostscript rendering,
+and compared both PDFs at 96 dpi.
 
-This is a same-environment packaging/reproduction check, not independent human
-replication, proof-assistant verification, cross-platform validation, or upstream
-Scorch execution.
+The post-hoc audit is not added to the frozen 801-query main campaign.  It uses
+the same generator family, checker, oracle, and replay code, so it is a
+sensitivity check rather than independent replication or statistical evidence.
+Runtime and peak RSS vary by host and are intentionally excluded from semantic
+summary equality.

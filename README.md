@@ -3,11 +3,12 @@
 This standalone repository implements and validates the artifact for the paper of
 the same name. It contains an exact-rational finite-read tensor checker, compact
 counterexample construction and replay, a restricted linear-consumer support
-criterion, and four clean-room source adapters for a fixed twelve-commit public
+criterion, and three clean-room source adapters for a fixed twelve-commit public
 Scorch denominator.
 
-The scope is intentionally narrow. Four commits admit complete production-diff
-source adapters and eight remain explicit abstentions. No upstream Scorch
+The scope is intentionally narrow. Three commits admit complete production-diff
+source adapters and nine remain explicit abstentions. P01 remains an abstained
+candidate with separately reported finite successful-domain diagnostics. No upstream Scorch
 checkout, native extension, generated kernel, or repository test suite is built
 or executed. The public result is conditional source-observable equality under
 stated invariants and unchanged downstream components—not whole-runtime patch
@@ -44,13 +45,15 @@ python emit_tables.py \
   --output results/tex-tables
 ```
 
-`reproduce.py` launches five sequential bounded phases:
+`reproduce.py` launches six sequential bounded phases:
 
-1. 33 unit tests;
-2. an offline integrity audit of 83 cited scholarly records plus 16 dated primary-record spot checks;
+1. 38 unit and adversarial tests;
+2. an offline integrity audit of 83 cited scholarly records plus a complete 83-record primary-record audit;
 3. 28 pilot program pairs and 16 consumer descriptions;
-4. 64 frozen generated pairs plus the 729 coefficient-row-pair enumeration; and
-5. the frozen twelve-commit public source-adapter study.
+4. 64 frozen generated pairs plus the 729 coefficient-row-pair enumeration;
+5. a separate post-hoc multi-seed robustness audit over 256 additional generated
+   pairs, excluded from the frozen 801-query campaign; and
+6. the frozen twelve-commit public source-adapter study.
 
 Each child is limited to one worker, 2 GiB address space, 105/110 CPU seconds,
 and 115 wall seconds. Solver queries use a 1,500 ms timeout. A nonzero child exit,
@@ -67,14 +70,23 @@ The retained current summary reports:
 - 162 compact finite-read certificates: 72 with zero stored cells, 83 with one,
   and seven with two;
 - five additional two-cell consumer refutations;
-- 4 admitted public source adapters and 8 abstentions in 12 commits;
-- 29,740 bounded source-adapter states with zero mismatches;
-- 20 synthetic adapter mutants, with 16/20 detected by repeated developer
-  examples, 19/20 by seeded random, and 20/20 by boundary stratification at equal
-  64-execution-per-adapter budgets; and
+- 3 admitted public source adapters and 9 abstentions in 12 commits;
+- 526 admitted bounded source-adapter states with zero mismatches;
+- P01 retained separately with 29,222 matching successful-domain states and
+  three differing source-reachable scalar boundary controls;
+- 18 synthetic adapter mutants: repeated developer indices detect 14/18,
+  seeded random with replacement detects 18/18, and an evenly spaced
+  enumeration-index grid detects 18/18 under a cap of 64 candidate slots per
+  mutant, using 325, 121, and 318 actual executions; and
 - 83 cited bibliography records matching the frozen inventory, including 77 DOI
-  records and six stable official or DBLP locators, plus 16 dated primary-record
-  metadata spot checks.
+  records and six stable official or DBLP locators, plus complete dated
+  primary-record metadata reconciliation and citation-context records for all
+  83 cited keys; and
+- a post-hoc robustness audit over eight additional seeds (256 cases, 2,048
+  queries, 512 oracle checks, and 500 independently replayed compact
+  certificates) with no validation errors. These counts are kept separate from
+  the frozen main campaign and do not constitute independent or statistical
+  validation.
 
 These units describe different objects and must not be summed into a nominal
 workload or bug count.
@@ -139,16 +151,22 @@ of every changed statement, source-state invariant, before/after observable,
 universal equality argument, independently coded bounded models with mutants,
 and an unchanged-downstream lifting premise.
 
-- **P01**: generated-string versus direct CIN construction; complete CIN AST.
-- **P04**: monolithic versus extracted LLIR rendering; generated C++ text.
-- **P06**: monolithic versus extracted coordinate resolution; ordered LLIR
-  statement sequence.
-- **P08**: two mode-order initialization cascades under the constructor invariant;
-  initialized sequence.
+- **P01 (abstained candidate)**: generated-string versus direct CIN
+  construction. The 29,222 successful-domain AST comparisons are retained, but
+  source-reachable scalar boundary controls invalidate the proposed complete
+  invariant.
+- **P04 (admitted)**: monolithic versus extracted LLIR rendering; exact generated
+  C++ text, with independently implemented conditional paths.
+- **P06 (admitted)**: monolithic versus extracted coordinate resolution; complete
+  ordered typed LLIR node trees, including operands, addresses, literals, bounds,
+  updates, and bodies.
+- **P08 (admitted)**: two mode-order initialization cascades under the immutable
+  fixed-production call-site invariant; initialized sequence or exception class.
 
-The other eight commits change accepted API inputs, object/exception or ownership
-semantics, physical sparse representation, scheduler choices, floating-point/raw
-memory behavior, or whole-runtime dispatch. The artifact abstains rather than
+P01 and the other eight abstained commits change or expose accepted inputs,
+object/exception or ownership semantics, physical sparse representation,
+scheduler choices, floating-point/raw-memory behavior, or whole-runtime
+dispatch beyond a closed adapter domain. The artifact abstains rather than
 projecting them onto a convenient rational expression.
 
 The adapters are original semantic models written from attributed public diffs.
@@ -163,9 +181,10 @@ retained in the CSV and source ledger.
 - `proofs/core.md`: definitions and prose proof ledger.
 - `tests/`: semantic, replay, oracle, consumer, and source-adapter regressions.
 - `audit_references.py`, `run_pilot.py`, `run_diagnostics.py`,
-  `run_public_study.py`: retained integrity check and campaigns.
+  `run_robustness_audit.py`, `run_public_study.py`: retained integrity check and campaigns.
 - `data/`: exact program/consumer inputs, generated cases, certificates, public
-  commit denominator, frozen bibliography, citation keys, and metadata inventory.
+  commit denominator, frozen bibliography, primary-record audit, citation-context
+  ledger, citation keys, and metadata inventory.
 - `results/current/`: raw outputs used by the paper.
 - `results/summary.json`: reconciled retained counts.
 - `docs/`: protocols, source selection, literature scope, formats, and evidence

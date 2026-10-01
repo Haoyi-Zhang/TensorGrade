@@ -2,72 +2,75 @@
 
 ## Selection and split
 
-The denominator is a fixed chronological sequence of twelve non-merge commits in
-`bobbyyyan/scorch`, beginning with commit `72c55d...`. Each touches production
-compiler, format, dispatch, or kernel source. Documentation-only, benchmark-only,
-and tests-only commits between the selected commits were excluded by rule, not by
-outcome. The first four records are the development segment; the next eight are
-the temporal held-out segment. This is a retrospective split chosen after initial
-repository scouting, not a preregistration or a genuinely blind test.
+The denominator is the fixed twelve-row chronological production-commit corpus
+in `data/public-corpus.csv`. The first four rows are the development segment and
+the next eight form a later retrospective segment. The split is not
+preregistered or blind. Unsupported records remain in the denominator as
+abstentions. After source-invariant repair, three commits pass all seven gates
+and nine abstain; development admits one of four and the later segment admits two
+of eight. No upstream checkout, import, native build, generated kernel, or Scorch
+test suite is run.
 
-Every selected commit remains in `data/public-corpus.csv`. An unsupported commit
-is an abstention, never silently discarded or counted as a verified patch. Four
-commits have complete production-diff adapters; eight abstain. The held-out result
-is two admitted and six abstained. No upstream Scorch checkout, native extension,
-or repository test suite is executed.
+## Evidence and gates
 
-## What “admitted” means
+`data/public-adapter-evidence.json` fixes the parent and child commit, immutable
+file/blob locator, production-hunk disposition, source invariant, observable,
+proof location, bounded cases, and negative controls for P01, P04, P06, and P08.
+An admitted record requires:
 
-An admitted record satisfies all of the following:
+1. fixed parent/child and complete changed production-file scope;
+2. runtime/non-runtime disposition of every production hunk;
+3. a source-derived invariant, not an adapter-only input filter;
+4. a complete observable for the claimed execution;
+5. a universal equality argument;
+6. independently coded before/after models and target-sensitive controls; and
+7. unchanged-downstream congruence to S, V, Z, M, and O.
 
-1. Every production-code change in the commit is assigned either to the adapter
-   or to a non-runtime category such as a comment.
-2. The adapter states a source invariant and an observable (CIN AST, generated
-   C++ text, emitted LLIR statement sequence, or initialized mode-order value).
-3. A universal prose proof establishes equality of that observable.
-4. A dependency-free executable model compares independent before/after paths on
-   a retained bounded domain and exercises synthetic mutants.
-5. Equality of the source observable is connected by a congruence argument to
-   the paper’s five tensor observations. This implication assumes unchanged
-   downstream components and excludes hidden reflection or undefined behavior.
+## Records
 
-Bounded execution is validation of the adapter, not the universal proof. The
-source adapters are written from public diffs and are not independent of the
-paper authors’ interpretation.
+- **P01 is abstained.** The source only asserts that some index variable exists.
+  It does not require every operand or result access to be non-scalar. Three
+  mixed scalar/indexed controls enter the changed region and differ. The 1--4
+  operand range and finite access grammar are therefore only a validation
+  boundary. The 29,222 equal successful-domain ASTs remain a candidate
+  diagnostic and are not counted as admitted adapter states.
+- **P04 is admitted.** Independent parent-monolith and child-helper renderers
+  compare exact C++ text on 30 branch/constructor states. Coverage includes
+  Comment, suppressed Comment, BlankLine, list dispatch, `ForLoop.init=None`,
+  condition lists, explicit else, and `make_last_case_else=True`. Condition,
+  else, and closing-brace mutants alter only the changed conditional path.
+- **P06 is admitted.** Four hundred states compare complete ordered typed LLIR
+  trees, not labels. Fields include operands, array names/indices, call
+  arguments, literals, loop bounds, updates, and bodies. A `+1` to `+2` control
+  has the same top-level node-kind signature and is rejected by full equality.
+- **P08 is admitted only for the fixed production call graph.** Immutable
+  child-tree call sites pass a format directly, or use `Workspace`, whose
+  overridden format property is present. Ninety-six equivalence-domain cases
+  match. Four absent-format controls are run separately and record parent
+  `AttributeError` versus child `None`. Direct external calls in that excluded
+  domain are not claimed equivalent.
 
-## Adapter records
+## Negative controls and selection schedules
 
-- **P01 (`72c55d...`)**: exact equivalence between the generated `exec`/`eval`
-  construction and direct overload calls. The proof is induction over operands
-  and the reversed schedule. The observable is the complete CIN AST produced by
-  the changed region.
-- **P04 (`d7a9cd...`)**: case analysis over the finite LLIR node dispatch plus
-  structural induction over child nodes. Extracted helpers return exactly the
-  strings formerly produced in the monolithic dispatcher.
-- **P06 (`210568...`)**: the five helper methods partition the original coordinate
-  resolver’s emitted statement subsequences and are concatenated in their former
-  order, with the same predicates.
-- **P08 (`33532a...`)**: under the established TensorVar invariant—an explicit
-  nonempty mode order, a nonempty shape, or a format object—the old truthiness
-  cascade and the new `if/elif` cascade select the same sequence. The new behavior
-  for a constructor lacking all three is outside that invariant and is reported.
+Eighteen mutants are retained across the three admitted adapters. Each mutant
+has at most 64 **candidate input slots**. Execution stops at first detection and
+records the actual number executed. The schedules are named literally:
 
-## Negative controls and comparison
+- repeated developer indices;
+- seeded random indices with replacement; and
+- evenly spaced indices in the deterministic enumeration order.
 
-Each adapter has five hand-written source-level mutants. They are plausible
-mistakes (dropped operands, reversed nesting, changed punctuation/branch order,
-omitted emitted blocks, and precedence/off-by-one errors), not historical Scorch
-bugs. Three test-selection methods receive exactly 64 adapter executions per
-adapter: repeated developer examples, seeded random selection, and deterministic
-stratified boundary selection. They detect 16/20, 19/20, and 20/20 retained
-mutants, respectively; the random survivor is P04's omitted-call-semicolon mutant.
-The universal proof is reported separately and is not misrepresented as an
-equal-cost test method.
+The third schedule is not semantic-feature stratification. If a domain has fewer
+than 64 cases, it is exhausted and repeated; otherwise the schedule depends on
+the enumeration order. The repaired run detects 14/18, 18/18, and 18/18,
+respectively, using 325, 121, and 318 actual executions. These mutants are
+synthetic controls, not historical Scorch defects or a baseline for the
+universal proof.
 
-## Retrieval and licensing boundary
+## Retrieval boundary
 
-Commit identifiers, changed-file scopes, and source URLs are retained. The
-consulted Scorch snapshots did not expose a repository license file through the
-retrieval interface, so the artifact does not redistribute full upstream files
-or patches. Its executable adapters are original clean-room semantic models;
-small source facts are attributed by commit URL. Reproduction is network-free.
+The artifact redistributes no upstream source. It retains immutable commit,
+tree, and blob locators and clean-room adapters. The exact Scorch Apache license
+is recorded in `external_resources.csv`. Reproduction of the paper's executable
+models is network-free; reinspection of upstream source requires the immutable
+public locators.
