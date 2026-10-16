@@ -134,3 +134,9 @@ Original implementation, generated inputs, proof text, and result records are
 MIT-licensed under `LICENSE`. Z3 remains an unmodified, unbundled external
 dependency with its retained notice. Linked upstream and scholarly sources are
 not relicensed by this artifact.
+## Paper diagrams
+
+The optional `requirements-figures.txt` supports three self-contained Python
+vector diagrams. `python -B check_schematics.py` checks deterministic generation,
+embedded fonts and absence of raster images; it is separate from scientific
+reproduction and does not require Z3.

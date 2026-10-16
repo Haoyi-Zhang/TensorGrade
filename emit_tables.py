@@ -47,19 +47,19 @@ def main():
       ('P06 state-only controls rejected',s['p06_state_only_controls_rejected']),
       ('P01 candidate successful-domain states',s['p01_candidate_successful_domain_cases']),
       ('P08 excluded-domain controls',s['p08_excluded_domain_controls'])]
-    v=[r'\begin{table}[t]',r'\caption{Retained validation units. Rows deliberately count different objects and must not be summed.}\label{tab:validation}',r'\centering',r'\begin{tabular}{lr}',r'\toprule',r'Unit & Count\\\midrule']
+    v=[r'\begin{table}[t]',r'\caption{Retained validation units.}\label{tab:validation}',r'\centering',r'\begin{tabular}{lr}',r'\toprule',r'Unit & Count\\\midrule']
     v.extend(escape(a)+' & '+format(b,',')+r'\\' for a,b in rows)
     v.extend([r'\bottomrule',r'\end{tabular}',r'\end{table}']);(args.output/'validation.tex').write_text('\n'.join(v)+'\n')
-    g=[r'\begin{table}[t]',r'\caption{Greatest declared grades for the 22 admitted pilot pairs. The other six program-pair inputs are not assigned complete grades.}\label{tab:grades}',r'\centering',r'\begin{tabular}{lr}',r'\toprule Grade & Pilot pairs\\\midrule']
+    g=[r'\begin{table}[t]',r'\caption{Greatest grades for admitted pilot pairs.}\label{tab:grades}',r'\centering',r'\begin{tabular}{lr}',r'\toprule Grade & Pilot pairs\\\midrule']
     for label in ['empty','S','SM','SZ','SZM','SZV','SZVM','SZVO','SZVOM']:
         g.append((r'$\varnothing$' if label=='empty' else '$'+label+'$')+' & '+str(s['realized_complete_grades'].get(label,0))+r'\\')
     g.extend([r'\bottomrule',r'\end{tabular}',r'\end{table}']);(args.output/'grades.tex').write_text('\n'.join(g)+'\n')
-    catalog(args.output/'pilot-catalog.tex','All 28 pilot finite-read inputs, including nonadmitted cases. Case names resolve directly to retained JSON files.','tab:pilot-catalog',[(f'P{k+1:02}',r['case']['id'],outcome(r['grade'])) for k,r in enumerate(p['records'])])
-    catalog(args.output/'consumer-catalog.tex','All 16 consumer descriptions. Proved and refuted refer to the specified support-coherence condition.','tab:consumer-catalog',[(f'C{k+1:02}',r['case']['id'],escape(r['grade'].get('status',r['grade']['admission']))) for k,r in enumerate(p['consumer_records'])])
-    catalog(args.output/'diagnostic-catalog.tex','All 64 frozen generated program pairs. Their common seed is 1729; the exact JSON inputs, rather than an external dataset, define these cases.','tab:diagnostic-catalog',[(f'G{k+1:02}',r['case']['id'],outcome(r['grade'])) for k,r in enumerate(d['records'])])
+    catalog(args.output/'pilot-catalog.tex','All pilot finite-read inputs.','tab:pilot-catalog',[(f'P{k+1:02}',r['case']['id'],outcome(r['grade'])) for k,r in enumerate(p['records'])])
+    catalog(args.output/'consumer-catalog.tex','All consumer descriptions and coherence outcomes.','tab:consumer-catalog',[(f'C{k+1:02}',r['case']['id'],escape(r['grade'].get('status',r['grade']['admission']))) for k,r in enumerate(p['consumer_records'])])
+    catalog(args.output/'diagnostic-catalog.tex','Frozen generated program-pair outcomes.','tab:diagnostic-catalog',[(f'G{k+1:02}',r['case']['id'],outcome(r['grade'])) for k,r in enumerate(d['records'])])
 
     pc=[r'\begin{longtable}{@{}p{0.055\linewidth}p{0.13\linewidth}p{0.13\linewidth}p{0.585\linewidth}@{}}',
-        r"\caption{Frozen public-commit denominator. ``Held-out'' is a retrospective temporal split, not preregistration or blinded evaluation.}\label{tab:public-corpus}\\",
+        r"\caption{Frozen public-commit denominator.}\label{tab:public-corpus}\\",
         r'\toprule ID & Split & Decision & Production-diff disposition\\\midrule\endfirsthead',
         r'\multicolumn{4}{l}{Table \thetable{} (continued)}\\',
         r'\toprule ID & Split & Decision & Production-diff disposition\\\midrule\endhead',r'\bottomrule\endfoot']
@@ -68,7 +68,7 @@ def main():
     pc.append(r'\end{longtable}');(args.output/'public-corpus.tex').write_text('\n'.join(pc)+'\n')
 
     summaries=u['mutation_study']['summary']
-    mt=[r'\begin{table}[t]',r'\caption{Synthetic negative-control detection under a common cap of 64 candidate input slots per mutant. The total slot cap is $18\cdot64=1{,}152$ per policy. Execution stops at first detection, so actual executions differ. Mutants are not historical Scorch defects.}\label{tab:mutation}',r'\centering',r'\begin{tabular}{lrrrr}',r'\toprule',r'Selection policy & Detected & Total & Actual exec. & Total slot cap\\\midrule']
+    mt=[r'\begin{table}[t]',r'\caption{Synthetic-control detection with a 64-slot cap per mutant.}\label{tab:mutation}',r'\centering',r'\begin{tabular}{lrrrr}',r'\toprule',r'Selection policy & Detected & Total & Actual exec. & Total slot cap\\\midrule']
     names=[('Repeated developer indices','repeated-developer-indices'),('Seeded random with replacement','seeded-random-with-replacement'),('Evenly spaced enumeration indices','evenly-spaced-enumeration-indices')]
     for display,key in names:
         x=summaries[key];mt.append(f"{display} & {x['detected']} & {x['total']} & {x['actual_executions']} & {x['candidate_slots_if_no_early_stop']}"+r'\\')
@@ -76,7 +76,7 @@ def main():
 
     by_adapter={r['adapter']:r for r in u['adapter_results']}
     mut_rows=u['mutation_study']['rows']
-    ad=[r'\begin{table}[htbp]',r'\caption{Bounded validation by source record. Admitted-state counts exclude P01 after its source-invariant admission failure; P01 is retained separately as a candidate diagnostic.}\label{tab:adapter-cases}',r'\centering',r'\begin{tabular}{llrrr}',r'\toprule',r'Record & Decision & States & Mismatch & Excluded controls\\\midrule']
+    ad=[r'\begin{table}[htbp]',r'\caption{Bounded validation by source record.}\label{tab:adapter-cases}',r'\centering',r'\begin{tabular}{llrrr}',r'\toprule',r'Record & Decision & States & Mismatch & Excluded controls\\\midrule']
     p01=u['p01_candidate']
     ad.append(f"P01 constructor & abstained & {p01['successful_domain_case_count']:,} & {p01['successful_domain_mismatch_count']} & {p01['scalar_boundary_case_count']} ({sum(not x['same'] for x in p01['scalar_boundary_controls'])} differ)"+r"\\")
     labels={'P04':'renderer','P06':'resolver','P08':'initialization'}
@@ -86,7 +86,7 @@ def main():
     ad.append(f"Admitted total & 3/12 & {sum(x['bounded_case_count'] for x in u['adapter_results']):,} & {sum(x['mismatch_count'] for x in u['adapter_results'])} & 4"+r"\\")
     ad.extend([r'\bottomrule',r'\end{tabular}',r'\end{table}']);(args.output/'adapter-cases.tex').write_text('\n'.join(ad)+'\n')
 
-    md=[r'\begin{longtable}{@{}p{0.08\linewidth}p{0.34\linewidth}rrr@{}}',r"\caption{First detection candidate slot for all synthetic adapter mutants; an em dash denotes no detection within 64 selected slots. The third policy is an enumeration-index grid, not semantic-feature stratification.}\label{tab:mutation-detail}\\",r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endfirsthead',r'\multicolumn{5}{l}{Table \thetable{} (continued)}\\',r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endhead',r'\bottomrule\endfoot']
+    md=[r'\begin{longtable}{@{}p{0.08\linewidth}p{0.34\linewidth}rrr@{}}',r"\caption{First detection slot for synthetic adapter mutants.}\label{tab:mutation-detail}\\",r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endfirsthead',r'\multicolumn{5}{l}{Table \thetable{} (continued)}\\',r'\toprule Adapter & Mutant & Repeated dev. & Random & Even index grid\\\midrule\endhead',r'\bottomrule\endfoot']
     keys=('repeated-developer-indices','seeded-random-with-replacement','evenly-spaced-enumeration-indices')
     for x in mut_rows:
         def first(pol):
