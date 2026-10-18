@@ -140,3 +140,7 @@ The optional `requirements-figures.txt` supports three self-contained Python
 vector diagrams. `python -B check_schematics.py` checks deterministic generation,
 embedded fonts and absence of raster images; it is separate from scientific
 reproduction and does not require Z3.
+
+## Portable path notation
+
+Published execution records use `<PYTHON_ROOT>`, `<NODE_ROOT>`, `<RUNTIME_ROOT>` and `<PROJECTS_ROOT>` for machine-local installation and workspace prefixes. These are path aliases, not literal directories; substitute the corresponding local roots when replaying a command. Recorded interpreter and dependency versions, inputs, measurements and outcomes are unchanged. File inventories bind the published portable serializations; any `recorded_` identity denotes the pre-normalization bytes.
