@@ -31,7 +31,7 @@
       "command": [
         "audit_references.py",
         "--output",
-        "<PROJECTS_ROOT>\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\reference-audit.json"
+        "<ARTIFACT_ROOT>/results/reproduced-current/reference-audit.json"
       ],
       "exit_code": 0,
       "name": "reference-audit",
@@ -44,7 +44,7 @@
       "command": [
         "run_pilot.py",
         "--output",
-        "<PROJECTS_ROOT>\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\pilot.json"
+        "<ARTIFACT_ROOT>/results/reproduced-current/pilot.json"
       ],
       "exit_code": 0,
       "name": "pilot",
@@ -57,7 +57,7 @@
       "command": [
         "run_diagnostics.py",
         "--output",
-        "<PROJECTS_ROOT>\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\diagnostics.json"
+        "<ARTIFACT_ROOT>/results/reproduced-current/diagnostics.json"
       ],
       "exit_code": 0,
       "name": "diagnostics",
@@ -70,7 +70,7 @@
       "command": [
         "run_robustness_audit.py",
         "--output",
-        "<PROJECTS_ROOT>\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\robustness-audit.json"
+        "<ARTIFACT_ROOT>/results/reproduced-current/robustness-audit.json"
       ],
       "exit_code": 0,
       "name": "robustness-audit",
@@ -85,7 +85,7 @@
         "--corpus",
         "data/public-corpus.csv",
         "--output",
-        "<PROJECTS_ROOT>\\2026-07-13\\new-chat-4\\repair_workspace\\candidate\\P094\\artifact\\results\\reproduced-current\\public-study.json",
+        "<ARTIFACT_ROOT>/results/reproduced-current/public-study.json",
         "--seed",
         "20260915",
         "--budget",
