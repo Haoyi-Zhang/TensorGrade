@@ -116,7 +116,7 @@
         }
       ],
       "source_invariant": "Input is one of the LLIR node variants accepted by the fixed parent dispatcher, with well-formed child fields and branch-list lengths.",
-      "observable": "exact generated C++ string",
+      "observable": "pair of exact generated C++ string and post-call comment-suppression state",
       "g6_independence": "The parent model is a monolithic transcription. The child model has separate expression, loop, conditional, and function helpers; the parent does not call those helpers.",
       "bounded_validation": {
         "states": 30,

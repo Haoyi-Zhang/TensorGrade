@@ -53,8 +53,7 @@ of tables/figures:
 
 Five influential foundations—symbolic execution, abstract interpretation, KLEE,
 CSmith, and Alive2—and at least five adjacent tensor/compiler-verification papers
-were also calibrated. The compact pattern matrix and full source list are in
-`research-plan.md`. No award status, citation-count threshold, or acceptance
+were also calibrated. No award status, citation-count threshold, or acceptance
 prediction is asserted.
 
 Available full text or publisher HTML was inspected for substantive method,

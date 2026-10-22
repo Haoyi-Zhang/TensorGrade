@@ -128,7 +128,6 @@ redistributed.
 General theorems are prose proofs. Z3 is trusted for UNSAT; the separate
 interpreter checks concrete SAT witnesses. The code, adapters, proofs, and
 self-audit arose in one research process, not independent human validation.
-Successful commands do not confer submission permission.
 
 Original implementation, generated inputs, proof text, and result records are
 MIT-licensed under `LICENSE`. Z3 remains an unmodified, unbundled external
